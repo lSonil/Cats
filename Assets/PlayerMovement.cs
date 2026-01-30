@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem; // Adăugăm această bibliotecă
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,33 +13,46 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private float moveInput;
+    private Vector2 moveInput; // Schimbat din float în Vector2 pentru noul sistem
     private bool isGrounded;
+    private PlayerInput playerInput;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // Fix pentru warning-ul despre project-wide actions asset
+        playerInput = GetComponent<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.actions.Disable();
+            playerInput.actions.FindActionMap("Player").Enable();
+        }
     }
 
-    void Update()
+    // Această funcție va fi apelată automat de componenta Player Input
+    public void OnMove(InputValue value)
     {
-        // 1. Get Horizontal Input (A/D or Left/Right)
-        moveInput = Input.GetAxisRaw("Horizontal");
+        moveInput = value.Get<Vector2>();
+    }
 
-        // 2. Check if the player is touching the ground
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
-
-        // 3. Jump Input (Spacebar by default)
-        if (Input.GetButtonDown("Jump") && isGrounded)
+    // Această funcție va fi apelată automat când apeși oricare tastă de Jump (Space/W/Up)
+    public void OnJump(InputValue value)
+    {
+        if (value.isPressed && isGrounded)
         {
-            // Note: If using a version older than Unity 2023, change linearVelocity to velocity
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
 
+    void Update()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+    }
+
     void FixedUpdate()
     {
-        // Apply horizontal movement while preserving vertical falling/jumping speed
-        rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
+        // Aplicăm mișcarea pe axa X folosind moveInput.x
+        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
     }
 }
