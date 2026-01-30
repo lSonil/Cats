@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
+            Debug.Log("Panel activated! Active state: " + gameOverPanel.activeSelf);
+        }
+        else
+        {
+            Debug.LogError("Game Over Panel is not assigned!");
         }
 
         Debug.Log("Game Over! Press R to restart.");
