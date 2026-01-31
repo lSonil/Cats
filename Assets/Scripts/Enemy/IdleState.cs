@@ -7,8 +7,9 @@ public class IdleState : IEnemyState
 
     public void Enter(EnemyAI enemy)
     {
-        startPosition = enemy.transform.position;
+        startPosition = enemy.GetStartPosition();
         movingRight = true;
+        Debug.Log($"IdleState: Entered. Start position: {startPosition}, patrolOnIdle: {enemy.patrolOnIdle}");
     }
 
     public void Update(EnemyAI enemy)
@@ -28,21 +29,25 @@ public class IdleState : IEnemyState
     {
         // Calculate how far we've moved from start position
         float distanceMoved = enemy.transform.position.x - startPosition.x;
+        float direction = movingRight ? 1f : -1f;
+
+        Debug.Log($"IdleState.Patrol: distanceMoved={distanceMoved:F2}, patrolDistance={enemy.PatrolDistance:F2}, direction={direction}, moving={movingRight}");
 
         // Check if we've reached patrol boundaries
         if (movingRight && distanceMoved >= enemy.PatrolDistance)
         {
             movingRight = false;
+            Debug.Log("IdleState.Patrol: Reached right boundary, flipping");
             Flip(enemy);
         }
         else if (!movingRight && distanceMoved <= -enemy.PatrolDistance)
         {
             movingRight = true;
+            Debug.Log("IdleState.Patrol: Reached left boundary, flipping");
             Flip(enemy);
         }
 
         // Move in current direction
-        float direction = movingRight ? 1f : -1f;
         enemy.Rb.linearVelocity = new Vector2(direction * enemy.PatrolSpeed, enemy.Rb.linearVelocity.y);
     }
 
