@@ -7,12 +7,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Input Settings")]
-    public InputActionReference restartAction;
+    public PlayerInput playerInput;
 
     [Header("Game Over Settings")]
     public GameObject gameOverPanel;
 
-    private bool isGameOver = false;
+    private InputAction restartAction;
 
     void Awake()
     {
@@ -33,13 +33,17 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel.SetActive(false);
         }
+
+        EnsureInput();
     }
 
     void OnEnable()
     {
+        EnsureInput();
         if (restartAction != null)
         {
-            restartAction.action.Enable();
+            restartAction.performed += OnRestartPerformed;
+            restartAction.Enable();
         }
     }
 
@@ -47,22 +51,49 @@ public class GameManager : MonoBehaviour
     {
         if (restartAction != null)
         {
-            restartAction.action.Disable();
+            restartAction.performed -= OnRestartPerformed;
         }
     }
 
-    void Update()
+    private void EnsureInput()
     {
-        // Allow restart at any time
-        if (restartAction != null && restartAction.action.WasPressedThisFrame())
+        // Prefer the UI action map on the player's PlayerInput
+        if (playerInput == null)
         {
-            RestartGame();
+            var playerObject = GameObject.Find("Player");
+            if (playerObject != null)
+            {
+                playerInput = playerObject.GetComponent<PlayerInput>();
+            }
         }
+
+        if (playerInput == null)
+        {
+            Debug.LogWarning("GameManager: PlayerInput reference is not assigned and Player object was not found.");
+            return;
+        }
+
+        var uiMap = playerInput.actions.FindActionMap("UI");
+        if (uiMap != null && !uiMap.enabled)
+        {
+            uiMap.Enable();
+        }
+
+        restartAction = uiMap?.FindAction("Restart", true);
+    }
+
+    private void OnRestartPerformed(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+        {
+            return;
+        }
+
+        RestartGame();
     }
 
     public void GameOver()
     {
-        isGameOver = true;
         Time.timeScale = 0f; // Pause the game
 
         // Show game over panel
