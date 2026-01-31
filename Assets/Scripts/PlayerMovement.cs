@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
+    public LayerMask itemFilterLayer;
 
     private Rigidbody2D rb;
     private Vector2 moveInput;
@@ -32,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
     public bool Idle() => isIdleLongTime;
     public bool Moving() => moveInput!=Vector2.zero;
     public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
+
+        
 
     // This function runs on BOTH press and release if Action Type is "Pass Through"
     public void OnJump(InputValue value)
@@ -66,7 +69,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer) ||
+                     Physics2D.OverlapCircle(groundCheck.position, checkRadius, itemFilterLayer);
 
         if (isCharging)
         {
