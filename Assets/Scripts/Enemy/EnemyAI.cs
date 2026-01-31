@@ -82,17 +82,17 @@ public class EnemyAI : MonoBehaviour
         return playerTransform;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if enemy collided with player
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (collision.gameObject.GetComponent<PlayerInventory>().currentHeldItem == null)
+            if (collision.gameObject.GetComponentInParent<PlayerInventory>().currentHeldItem == null)
             {
                 GameManager.Instance.GameOver();
                 return;
             }
-            if (collision.gameObject.GetComponent<PlayerInventory>().currentHeldItem.itemId != Dog_Id) 
+            if (collision.gameObject.GetComponentInParent<PlayerInventory>().currentHeldItem.itemId != Dog_Id)
             {
                 GameManager.Instance.GameOver();
             }

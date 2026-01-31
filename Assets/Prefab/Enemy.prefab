@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2094485845654695556}
   - component: {fileID: 2185463897288140868}
   - component: {fileID: 8545044597779261521}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,6 +111,7 @@ MonoBehaviour:
   patrolDistance: 2
   detectionDistance: 3
   chaseSpeed: 2
+  Dog_Id: 0
 --- !u!50 &2185463897288140868
 Rigidbody2D:
   serializedVersion: 5

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4611541936697231618}
   - component: {fileID: 5249818359891651920}
   m_Layer: 7
-  m_Name: Triangle
+  m_Name: InteractPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 972d963e249347845a9cec8b90cbda03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item_Text_Positioner
-  Target_Position: {fileID: 0}
+  Target_Position: {fileID: 7150631107427220620}
 --- !u!23 &4611541936697231618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -375,5 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b374fc49e67a5c34795976e20a9f1569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  grabPrompt: {fileID: 0}
+  grabPrompt: {fileID: 2839758673157219412}
   itemId: 1
+  isTimed: 0
+  timeRemaining: 10
