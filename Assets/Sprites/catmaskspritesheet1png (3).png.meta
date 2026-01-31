@@ -1,40 +1,40 @@
 fileFormatVersion: 2
-guid: 44f22048302a63943bd1acb6740905f1
+guid: a87bd737875b53d46b4d6c831ba3427a
 TextureImporter:
   internalIDToNameTable:
-  - first:
-      213: -1876255335145486087
-    second: catmaskspritesheet1png (3)_0
-  - first:
-      213: 974293653646970442
-    second: catmaskspritesheet1png (3)_1
-  - first:
-      213: 1399803478661061800
-    second: catmaskspritesheet1png (3)_2
-  - first:
-      213: 5620511237711507534
-    second: catmaskspritesheet1png (3)_3
-  - first:
-      213: 7643947404759070807
-    second: catmaskspritesheet1png (3)_4
-  - first:
-      213: -2735629171527263826
-    second: catmaskspritesheet1png (3)_5
-  - first:
-      213: 1848669513843578947
-    second: catmaskspritesheet1png (3)_6
-  - first:
-      213: -3758835704713292228
-    second: catmaskspritesheet1png (3)_7
-  - first:
-      213: 9152424830238283215
-    second: catmaskspritesheet1png (3)_8
-  - first:
-      213: 4017148060561192261
-    second: catmaskspritesheet1png (3)_9
-  - first:
-      213: -5349953435818748572
-    second: catmaskspritesheet1png (3)_10
+    - first:
+        213: -1876255335145486087
+      second: catmaskspritesheet1png (3)_0
+    - first:
+        213: 974293653646970442
+      second: catmaskspritesheet1png (3)_1
+    - first:
+        213: 1399803478661061800
+      second: catmaskspritesheet1png (3)_2
+    - first:
+        213: 5620511237711507534
+      second: catmaskspritesheet1png (3)_3
+    - first:
+        213: 7643947404759070807
+      second: catmaskspritesheet1png (3)_4
+    - first:
+        213: -2735629171527263826
+      second: catmaskspritesheet1png (3)_5
+    - first:
+        213: 1848669513843578947
+      second: catmaskspritesheet1png (3)_6
+    - first:
+        213: -3758835704713292228
+      second: catmaskspritesheet1png (3)_7
+    - first:
+        213: 9152424830238283215
+      second: catmaskspritesheet1png (3)_8
+    - first:
+        213: 4017148060561192261
+      second: catmaskspritesheet1png (3)_9
+    - first:
+        213: -5349953435818748572
+      second: catmaskspritesheet1png (3)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -80,9 +80,9 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: { x: 0.5, y: 0.5 }
+  spritePixelsToUnits: 250
+  spriteBorder: { x: 0, y: 0, z: 0, w: 0 }
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,368 +100,248 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: DefaultTexturePlatform
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: Standalone
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_0
-      rect:
-        serializedVersion: 2
-        x: 2143
-        y: 1782
-        width: 574
-        height: 423
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f8c8b8a6b336f5e0800000000000000
-      internalID: -1876255335145486087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_1
-      rect:
-        serializedVersion: 2
-        x: 2531
-        y: 2205
-        width: 45
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4e8b8c7ae2658d00800000000000000
-      internalID: 974293653646970442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_2
-      rect:
-        serializedVersion: 2
-        x: 2583
-        y: 2199
-        width: 43
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8acd2fce8d91d6310800000000000000
-      internalID: 1399803478661061800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_3
-      rect:
-        serializedVersion: 2
-        x: 131
-        y: 1788
-        width: 474
-        height: 389
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e40b2e32131100e40800000000000000
-      internalID: 5620511237711507534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_4
-      rect:
-        serializedVersion: 2
-        x: 710
-        y: 1777
-        width: 618
-        height: 398
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 758fe6e4aa1c41a60800000000000000
-      internalID: 7643947404759070807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_5
-      rect:
-        serializedVersion: 2
-        x: 1435
-        y: 1779
-        width: 615
-        height: 386
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea9dbe133c7190ad0800000000000000
-      internalID: -2735629171527263826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_6
-      rect:
-        serializedVersion: 2
-        x: 2938
-        y: 1908
-        width: 415
-        height: 232
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3489dbfc02bc7a910800000000000000
-      internalID: 1848669513843578947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_7
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 1078
-        width: 571
-        height: 288
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c36528b77dee5dbc0800000000000000
-      internalID: -3758835704713292228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_8
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 1085
-        width: 597
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc551d734e1f30f70800000000000000
-      internalID: 9152424830238283215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_9
-      rect:
-        serializedVersion: 2
-        x: 1428
-        y: 1085
-        width: 630
-        height: 546
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54536e790e6cfb730800000000000000
-      internalID: 4017148060561192261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catmaskspritesheet1png (3)_10
-      rect:
-        serializedVersion: 2
-        x: 2151
-        y: 1085
-        width: 566
-        height: 448
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 465942502b521c5b0800000000000000
-      internalID: -5349953435818748572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_0
+        rect:
+          serializedVersion: 2
+          x: 0
+          y: 1780
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 9f8c8b8a6b336f5e0800000000000000
+        internalID: -1876255335145486087
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_1
+        rect:
+          serializedVersion: 2
+          x: 700
+          y: 1780
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: a4e8b8c7ae2658d00800000000000000
+        internalID: 974293653646970442
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_2
+        rect:
+          serializedVersion: 2
+          x: 1400
+          y: 1780
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 8acd2fce8d91d6310800000000000000
+        internalID: 1399803478661061800
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_3
+        rect:
+          serializedVersion: 2
+          x: 2100
+          y: 1780
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: e40b2e32131100e40800000000000000
+        internalID: 5620511237711507534
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_4
+        rect:
+          serializedVersion: 2
+          x: 2800
+          y: 1780
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 758fe6e4aa1c41a60800000000000000
+        internalID: 7643947404759070807
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_5
+        rect:
+          serializedVersion: 2
+          x: 0
+          y: 1080
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: ea9dbe133c7190ad0800000000000000
+        internalID: -2735629171527263826
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_6
+        rect:
+          serializedVersion: 2
+          x: 700
+          y: 1080
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 3489dbfc02bc7a910800000000000000
+        internalID: 1848669513843578947
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_7
+        rect:
+          serializedVersion: 2
+          x: 1400
+          y: 1080
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: c36528b77dee5dbc0800000000000000
+        internalID: -3758835704713292228
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catmaskspritesheet1png (3)_8
+        rect:
+          serializedVersion: 2
+          x: 2100
+          y: 1080
+          width: 700
+          height: 700
+        alignment: 7
+        pivot: { x: 0.5, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: fc551d734e1f30f70800000000000000
+        internalID: 9152424830238283215
+        vertices: []
+        indices:
+        edges: []
+        weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1d87dca1e5a5a0a45b55beef55c3af50
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+        - key: SpriteEditor.SliceSettings
+          value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":700.0,"y":700.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       catmaskspritesheet1png (3)_0: -1876255335145486087
       catmaskspritesheet1png (3)_1: 974293653646970442
@@ -474,8 +354,8 @@ TextureImporter:
       catmaskspritesheet1png (3)_7: -3758835704713292228
       catmaskspritesheet1png (3)_8: 9152424830238283215
       catmaskspritesheet1png (3)_9: 4017148060561192261
-  mipmapLimitGroupName: 
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

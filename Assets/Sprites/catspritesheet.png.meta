@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f66de90319dff44e9f28bab274e8c12
+guid: e7ab2ad34efceb14fbabf5ca25366616
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -90,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,85 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: VisionOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: tvOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -220,12 +142,12 @@ TextureImporter:
       name: catspritesheet_0
       rect:
         serializedVersion: 2
-        x: 2717
-        y: 1684
-        width: 641
-        height: 473
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1780
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -242,12 +164,12 @@ TextureImporter:
       name: catspritesheet_1
       rect:
         serializedVersion: 2
-        x: 3150
-        y: 2157
-        width: 50
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 1780
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -264,12 +186,12 @@ TextureImporter:
       name: catspritesheet_2
       rect:
         serializedVersion: 2
-        x: 3209
-        y: 2150
-        width: 47
-        height: 77
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1400
+        y: 1780
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -286,12 +208,12 @@ TextureImporter:
       name: catspritesheet_3
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1823
-        width: 33
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2100
+        y: 1780
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,81 +227,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 1694
-        width: 448
-        height: 417
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 479f9ea9919674a00800000000000000
-      internalID: 740676222419859828
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 628
-        y: 1691
-        width: 528
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a97088b5c1ade9c0800000000000000
-      internalID: -3896280232029554265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 1191
-        y: 1691
-        width: 690
-        height: 444
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dad344cf6010a8850800000000000000
-      internalID: 6379912951637491117
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: catspritesheet_7
       rect:
         serializedVersion: 2
-        x: 1967
-        y: 1697
-        width: 686
-        height: 431
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1400
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -396,12 +252,12 @@ TextureImporter:
       name: catspritesheet_8
       rect:
         serializedVersion: 2
-        x: 1432
-        y: 441
-        width: 702
-        height: 609
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2100
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -418,12 +274,12 @@ TextureImporter:
       name: catspritesheet_9
       rect:
         serializedVersion: 2
-        x: 2181
-        y: 441
-        width: 698
-        height: 440
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2800
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -437,89 +293,67 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_10
+      name: catspritesheet_4
       rect:
         serializedVersion: 2
-        x: 2960
-        y: 447
-        width: 445
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2800
+        y: 1780
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b86b2df9482a9f4d0800000000000000
-      internalID: -3100268177967106421
+      spriteID: 809a16465a2f00d4a90f2a9b7ead31de
+      internalID: 740676222419859828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_11
+      name: catspritesheet_5
       rect:
         serializedVersion: 2
-        x: 3308
-        y: 778
-        width: 200
-        height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ec780e61db0e05b20800000000000000
-      internalID: 3121241644505008078
+      spriteID: 129413544b88b8f479dc5e3f17389b45
+      internalID: -3896280232029554265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_12
+      name: catspritesheet_6
       rect:
         serializedVersion: 2
-        x: 36
-        y: 441
-        width: 637
-        height: 321
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 700
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fd92b2253928961a0800000000000000
-      internalID: -6815772991798171169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 706
-        y: 444
-        width: 667
-        height: 279
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7810236b1e0278ec0800000000000000
-      internalID: -3564844426243997305
+      spriteID: db59fe292293cac41bd024a3aed04127
+      internalID: 6379912951637491117
       vertices: []
       indices: 
       edges: []
@@ -528,7 +362,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 81c0ae14729d1194eb42e0a5523189d5
     internalID: 0
     vertices: []
     indices: 
@@ -536,14 +370,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":700.0,"y":700.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       catspritesheet_0: -6352529091568291326
       catspritesheet_1: -5040847865343291321
       catspritesheet_10: -3100268177967106421
       catspritesheet_11: 3121241644505008078
       catspritesheet_12: -6815772991798171169
-      catspritesheet_13: -3564844426243997305
       catspritesheet_2: -6761976110523849921
       catspritesheet_3: -2187746899934440009
       catspritesheet_4: 740676222419859828

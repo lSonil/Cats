@@ -33,13 +33,13 @@ public class Camera_Controller : MonoBehaviour
     {
         if (playerRigidbody == null)
         {
-            Debug.LogWarning("Camera_Controller: playerRigidbody is not assigned!");
+            //Debug.LogWarning("Camera_Controller: playerRigidbody is not assigned!");
             return;
         }
 
         if (Camera_Target == null)
         {
-            Debug.LogWarning("Camera_Controller: Camera_Target is not assigned!");
+            //Debug.LogWarning("Camera_Controller: Camera_Target is not assigned!");
             return;
         }
 
