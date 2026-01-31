@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public bool Grounded() => isGrounded;
     public bool Gharging() => isCharging;
     public bool Idle() => isIdleLongTime;
-    public bool Moving() => moveInput!=Vector2.zero;
+    public bool Falling() => rb.linearVelocity.y<0;
+    public bool Moving() => rb.linearVelocity.x!=0;
     public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
 
         
@@ -61,8 +62,13 @@ public class PlayerMovement : MonoBehaviour
         float chargePercent = Mathf.Clamp01(jumpChargeTimer);
         float finalJumpForce = Mathf.Lerp(minJump, maxJump, chargePercent);
 
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, finalJumpForce);
+        // 1. Determine direction based on where the sprite is looking
+        // If flipX is true, we are looking Left (-1). If false, Right (1).
+        float jumpDirection = GetComponent<SpriteRenderer>().flipX ? -1f : 1f;
 
+        // 2. Apply both X and Y forces
+        rb.linearVelocity = new Vector2(jumpDirection * finalJumpForce, finalJumpForce);
+        isGrounded = false;
         isCharging = false;
         jumpChargeTimer = 0f;
     }
@@ -80,21 +86,28 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+        // If charging, we don't move horizontally via keys
+        if (isCharging)
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
+        else
+        {
+            // Standard movement
+            rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+        }
 
+        // Handle Sprite Flipping
         if (moveInput.x != 0)
         {
             GetComponent<SpriteRenderer>().flipX = (moveInput.x < 0);
         }
 
-        if (moveInput.x == 0)
+        // Handle Idle Timer
+        if (moveInput.x == 0 && isGrounded) // Only idle if standing still on ground
         {
             idleTimer += Time.fixedDeltaTime;
-
-            if (idleTimer >= idleThreshold)
-            {
-                isIdleLongTime = true;
-            }
+            if (idleTimer >= idleThreshold) isIdleLongTime = true;
         }
         else
         {

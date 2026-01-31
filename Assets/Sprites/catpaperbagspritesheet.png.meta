@@ -1,49 +1,43 @@
 fileFormatVersion: 2
-guid: e7ab2ad34efceb14fbabf5ca25366616
+guid: e34fcccab3bd8be409dd22d0c197b286
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6352529091568291326
-    second: catspritesheet_0
+      213: -141817156367059856
+    second: catpaperbagspritesheet_0
   - first:
-      213: -5040847865343291321
-    second: catspritesheet_1
+      213: 7658885298898678379
+    second: catpaperbagspritesheet_1
   - first:
-      213: -6761976110523849921
-    second: catspritesheet_2
+      213: 5454481642608652020
+    second: catpaperbagspritesheet_2
   - first:
-      213: -2187746899934440009
-    second: catspritesheet_3
+      213: -4762573366638220808
+    second: catpaperbagspritesheet_3
   - first:
-      213: 740676222419859828
-    second: catspritesheet_4
+      213: 4683053789976502708
+    second: catpaperbagspritesheet_4
   - first:
-      213: -3896280232029554265
-    second: catspritesheet_5
+      213: 6854835502880925123
+    second: catpaperbagspritesheet_5
   - first:
-      213: 6379912951637491117
-    second: catspritesheet_6
+      213: -8321895789004006768
+    second: catpaperbagspritesheet_6
   - first:
-      213: -4616505385047244362
-    second: catspritesheet_7
+      213: 4500215722745026939
+    second: catpaperbagspritesheet_7
   - first:
-      213: -7737611939649003944
-    second: catspritesheet_8
+      213: -5363431529644396330
+    second: catpaperbagspritesheet_8
   - first:
-      213: 2733722267055685385
-    second: catspritesheet_9
+      213: -8410047567775925655
+    second: catpaperbagspritesheet_9
   - first:
-      213: -3100268177967106421
-    second: catspritesheet_10
+      213: -900854791777611611
+    second: catpaperbagspritesheet_10
   - first:
-      213: 3121241644505008078
-    second: catspritesheet_11
-  - first:
-      213: -6815772991798171169
-    second: catspritesheet_12
-  - first:
-      213: -3564844426243997305
-    second: catspritesheet_13
+      213: -8849715228136027364
+    second: catpaperbagspritesheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,7 +133,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: catspritesheet_0
+      name: catpaperbagspritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +148,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 202bcb7c27847d7a0800000000000000
-      internalID: -6352529091568291326
+      spriteID: 0747fa33c0a280ef0800000000000000
+      internalID: -141817156367059856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_1
+      name: catpaperbagspritesheet_1
       rect:
         serializedVersion: 2
         x: 700
@@ -176,14 +170,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7405d63f29f4b0ab0800000000000000
-      internalID: -5040847865343291321
+      spriteID: b623150d993d94a60800000000000000
+      internalID: 7658885298898678379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_2
+      name: catpaperbagspritesheet_2
       rect:
         serializedVersion: 2
         x: 1400
@@ -198,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f336c80dd82a822a0800000000000000
-      internalID: -6761976110523849921
+      spriteID: 4fee395a72632bb40800000000000000
+      internalID: 5454481642608652020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_3
+      name: catpaperbagspritesheet_3
       rect:
         serializedVersion: 2
         x: 2100
@@ -220,80 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b512f229cf83a1e0800000000000000
-      internalID: -2187746899934440009
+      spriteID: 8f9eac891c0f7edb0800000000000000
+      internalID: -4762573366638220808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b1c494cfc0eeefb0800000000000000
-      internalID: -4616505385047244362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 85e566fbfea7e9490800000000000000
-      internalID: -7737611939649003944
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 2800
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 90ffd620be120f520800000000000000
-      internalID: 2733722267055685385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catspritesheet_4
+      name: catpaperbagspritesheet_4
       rect:
         serializedVersion: 2
         x: 2800
@@ -306,16 +234,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 809a16465a2f00d4a90f2a9b7ead31de
-      internalID: 740676222419859828
+      spriteID: 4b1a89f2c9c8df040800000000000000
+      internalID: 4683053789976502708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_5
+      name: catpaperbagspritesheet_5
       rect:
         serializedVersion: 2
         x: 0
@@ -328,16 +256,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 129413544b88b8f479dc5e3f17389b45
-      internalID: -3896280232029554265
+      spriteID: 3c524f64294412f50800000000000000
+      internalID: 6854835502880925123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: catspritesheet_6
+      name: catpaperbagspritesheet_6
       rect:
         serializedVersion: 2
         x: 700
@@ -350,10 +278,54 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: db59fe292293cac41bd024a3aed04127
-      internalID: 6379912951637491117
+      spriteID: 09ad8960fdfa28c80800000000000000
+      internalID: -8321895789004006768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catpaperbagspritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7958de4b5af37e30800000000000000
+      internalID: 4500215722745026939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catpaperbagspritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1080
+        width: 700
+        height: 700
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d07a62c0734195b0800000000000000
+      internalID: -5363431529644396330
       vertices: []
       indices: 
       edges: []
@@ -362,7 +334,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 81c0ae14729d1194eb42e0a5523189d5
+    spriteID: cabf7a771e0beba43a13974ea6869e42
     internalID: 0
     vertices: []
     indices: 
@@ -374,19 +346,18 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":700.0,"y":700.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      catspritesheet_0: -6352529091568291326
-      catspritesheet_1: -5040847865343291321
-      catspritesheet_10: -3100268177967106421
-      catspritesheet_11: 3121241644505008078
-      catspritesheet_12: -6815772991798171169
-      catspritesheet_2: -6761976110523849921
-      catspritesheet_3: -2187746899934440009
-      catspritesheet_4: 740676222419859828
-      catspritesheet_5: -3896280232029554265
-      catspritesheet_6: 6379912951637491117
-      catspritesheet_7: -4616505385047244362
-      catspritesheet_8: -7737611939649003944
-      catspritesheet_9: 2733722267055685385
+      catpaperbagspritesheet_0: -141817156367059856
+      catpaperbagspritesheet_1: 7658885298898678379
+      catpaperbagspritesheet_10: -900854791777611611
+      catpaperbagspritesheet_11: -8849715228136027364
+      catpaperbagspritesheet_2: 5454481642608652020
+      catpaperbagspritesheet_3: -4762573366638220808
+      catpaperbagspritesheet_4: 4683053789976502708
+      catpaperbagspritesheet_5: 6854835502880925123
+      catpaperbagspritesheet_6: -8321895789004006768
+      catpaperbagspritesheet_7: 4500215722745026939
+      catpaperbagspritesheet_8: -5363431529644396330
+      catpaperbagspritesheet_9: -8410047567775925655
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
