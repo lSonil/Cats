@@ -13,7 +13,7 @@ public class ReturnState : IEnemyState
         // If the player becomes a threat again, switch back to chase
         if (enemy.ShouldChasePlayer())
         {
-            Debug.Log("ReturnState: Player became a threat again, switching to Chase");
+            // Debug.Log("ReturnState: Player became a threat again, switching to Chase");
             enemy.SetGo();
             enemy.ChangeState(new ChaseState());
             return;
@@ -23,11 +23,11 @@ public class ReturnState : IEnemyState
         Vector3 current = enemy.transform.position;
 
         float distance = Vector2.Distance(current, target);
-        Debug.Log($"ReturnState.Update: Distance to start={distance:F2}, threshold={enemy.ArrivedThreshold:F2}, current={current}, target={target}");
+        // Debug.Log($"ReturnState.Update: Distance to start={distance:F2}, threshold={enemy.ArrivedThreshold:F2}, current={current}, target={target}");
 
         if (distance <= enemy.ArrivedThreshold)
         {
-            Debug.Log("ReturnState: Arrived at start position, switching to Idle");
+            // Debug.Log("ReturnState: Arrived at start position, switching to Idle");
             enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
             enemy.SetSit();
             enemy.ChangeState(new IdleState());

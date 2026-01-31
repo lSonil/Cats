@@ -9,7 +9,7 @@ public class IdleState : IEnemyState
     {
         startPosition = enemy.GetStartPosition();
         movingRight = true;
-        Debug.Log($"IdleState: Entered. Start position: {startPosition}, patrolOnIdle: {enemy.patrolOnIdle}");
+        // Debug.Log($"IdleState: Entered. Start position: {startPosition}, patrolOnIdle: {enemy.patrolOnIdle}");
     }
 
     public void Update(EnemyAI enemy)
@@ -31,19 +31,19 @@ public class IdleState : IEnemyState
         float distanceMoved = enemy.transform.position.x - startPosition.x;
         float direction = movingRight ? 1f : -1f;
 
-        Debug.Log($"IdleState.Patrol: distanceMoved={distanceMoved:F2}, patrolDistance={enemy.PatrolDistance:F2}, direction={direction}, moving={movingRight}");
+        // Debug.Log($"IdleState.Patrol: distanceMoved={distanceMoved:F2}, patrolDistance={enemy.PatrolDistance:F2}, direction={direction}, moving={movingRight}");
 
         // Check if we've reached patrol boundaries
         if (movingRight && distanceMoved >= enemy.PatrolDistance)
         {
             movingRight = false;
-            Debug.Log("IdleState.Patrol: Reached right boundary, flipping");
+            // Debug.Log("IdleState.Patrol: Reached right boundary, flipping");
             Flip(enemy);
         }
         else if (!movingRight && distanceMoved <= -enemy.PatrolDistance)
         {
             movingRight = true;
-            Debug.Log("IdleState.Patrol: Reached left boundary, flipping");
+            // Debug.Log("IdleState.Patrol: Reached left boundary, flipping");
             Flip(enemy);
         }
 

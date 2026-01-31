@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: e34fcccab3bd8be409dd22d0c197b286
+guid: ce20ace5723800343985b27d8e7f007e
 TextureImporter:
   internalIDToNameTable:
-  - first:
-      213: -141817156367059856
-    second: catpaperbagspritesheet_0
-  - first:
-      213: 7658885298898678379
-    second: catpaperbagspritesheet_1
-  - first:
-      213: 5454481642608652020
-    second: catpaperbagspritesheet_2
-  - first:
-      213: -4762573366638220808
-    second: catpaperbagspritesheet_3
-  - first:
-      213: 4683053789976502708
-    second: catpaperbagspritesheet_4
-  - first:
-      213: 6854835502880925123
-    second: catpaperbagspritesheet_5
-  - first:
-      213: -8321895789004006768
-    second: catpaperbagspritesheet_6
-  - first:
-      213: 4500215722745026939
-    second: catpaperbagspritesheet_7
-  - first:
-      213: -5363431529644396330
-    second: catpaperbagspritesheet_8
-  - first:
-      213: -8410047567775925655
-    second: catpaperbagspritesheet_9
-  - first:
-      213: -900854791777611611
-    second: catpaperbagspritesheet_10
-  - first:
-      213: -8849715228136027364
-    second: catpaperbagspritesheet_11
+    - first:
+        213: -2808892667195775117
+      second: catpapermasksheet_0
+    - first:
+        213: 7314560962521558929
+      second: catpapermasksheet_1
+    - first:
+        213: 2406364972455013093
+      second: catpapermasksheet_2
+    - first:
+        213: -1336513190515112619
+      second: catpapermasksheet_3
+    - first:
+        213: -3658198642141776707
+      second: catpapermasksheet_4
+    - first:
+        213: -6826087338053291629
+      second: catpapermasksheet_5
+    - first:
+        213: -8738470994695383714
+      second: catpapermasksheet_6
+    - first:
+        213: 7695487477704390386
+      second: catpapermasksheet_7
+    - first:
+        213: -6645666606270138202
+      second: catpapermasksheet_8
+    - first:
+        213: -8395546411574964321
+      second: catpapermasksheet_9
+    - first:
+        213: -7856372136630608401
+      second: catpapermasksheet_10
+    - first:
+        213: -6098539858928059751
+      second: catpapermasksheet_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -83,9 +83,9 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePivot: { x: 0.5, y: 0.5 }
+  spritePixelsToUnits: 100
+  spriteBorder: { x: 0, y: 0, z: 0, w: 0 }
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -103,263 +103,405 @@ TextureImporter:
   swizzle: 50462976
   cookieLightType: 0
   platformSettings:
-  - serializedVersion: 4
-    buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: DefaultTexturePlatform
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: WebGL
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: iOS
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: Standalone
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: Android
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: VisionOS
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: tvOS
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      buildTarget: WindowsStoreApps
+      maxTextureSize: 2048
+      resizeAlgorithm: 0
+      textureFormat: -1
+      textureCompression: 1
+      compressionQuality: 50
+      crunchedCompression: 0
+      allowsAlphaSplitting: 0
+      overridden: 0
+      ignorePlatformSupport: 0
+      androidETC2FallbackOverride: 0
+      forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1780
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0747fa33c0a280ef0800000000000000
-      internalID: -141817156367059856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 1780
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b623150d993d94a60800000000000000
-      internalID: 7658885298898678379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1780
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4fee395a72632bb40800000000000000
-      internalID: 5454481642608652020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 1780
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f9eac891c0f7edb0800000000000000
-      internalID: -4762573366638220808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 2800
-        y: 1780
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b1a89f2c9c8df040800000000000000
-      internalID: 4683053789976502708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c524f64294412f50800000000000000
-      internalID: 6854835502880925123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 700
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09ad8960fdfa28c80800000000000000
-      internalID: -8321895789004006768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b7958de4b5af37e30800000000000000
-      internalID: 4500215722745026939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: catpaperbagspritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 1080
-        width: 700
-        height: 700
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d07a62c0734195b0800000000000000
-      internalID: -5363431529644396330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_0
+        rect:
+          serializedVersion: 2
+          x: 108
+          y: 1677
+          width: 530
+          height: 529
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 377a897500fc409d0800000000000000
+        internalID: -2808892667195775117
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_1
+        rect:
+          serializedVersion: 2
+          x: 670
+          y: 1677
+          width: 750
+          height: 502
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 19f6903f07a828560800000000000000
+        internalID: 7314560962521558929
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_2
+        rect:
+          serializedVersion: 2
+          x: 1446
+          y: 1684
+          width: 750
+          height: 490
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 5eaaf176130256120800000000000000
+        internalID: 2406364972455013093
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_3
+        rect:
+          serializedVersion: 2
+          x: 2261
+          y: 1687
+          width: 698
+          height: 492
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 55509b99550c37de0800000000000000
+        internalID: -1336513190515112619
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_4
+        rect:
+          serializedVersion: 2
+          x: 2688
+          y: 2152
+          width: 48
+          height: 90
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: db4b25987b77b3dc0800000000000000
+        internalID: -3658198642141776707
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_5
+        rect:
+          serializedVersion: 2
+          x: 2745
+          y: 2146
+          width: 47
+          height: 75
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 391ba817bbdd441a0800000000000000
+        internalID: -6826087338053291629
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_6
+        rect:
+          serializedVersion: 2
+          x: 3050
+          y: 1869
+          width: 14
+          height: 14
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: e559021cde6bab680800000000000000
+        internalID: -8738470994695383714
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_7
+        rect:
+          serializedVersion: 2
+          x: 3059
+          y: 1782
+          width: 369
+          height: 365
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 2f6790aa61ddbca60800000000000000
+        internalID: 7695487477704390386
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_8
+        rect:
+          serializedVersion: 2
+          x: 36
+          y: 444
+          width: 673
+          height: 377
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 6a8b79d8e69d5c3a0800000000000000
+        internalID: -6645666606270138202
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_9
+        rect:
+          serializedVersion: 2
+          x: 855
+          y: 441
+          width: 674
+          height: 374
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: f9fc4ca25070d7b80800000000000000
+        internalID: -8395546411574964321
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_10
+        rect:
+          serializedVersion: 2
+          x: 1700
+          y: 441
+          width: 692
+          height: 705
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: fed1bd4aa2f88f290800000000000000
+        internalID: -7856372136630608401
+        vertices: []
+        indices:
+        edges: []
+        weights: []
+      - serializedVersion: 2
+        name: catpapermasksheet_11
+        rect:
+          serializedVersion: 2
+          x: 2490
+          y: 441
+          width: 750
+          height: 498
+        alignment: 0
+        pivot: { x: 0, y: 0 }
+        border: { x: 0, y: 0, z: 0, w: 0 }
+        customData:
+        outline: []
+        physicsShape: []
+        tessellationDetail: -1
+        bones: []
+        spriteID: 99a380c4f42ad5ba0800000000000000
+        internalID: -6098539858928059751
+        vertices: []
+        indices:
+        edges: []
+        weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: cabf7a771e0beba43a13974ea6869e42
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":700.0,"y":700.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      catpaperbagspritesheet_0: -141817156367059856
-      catpaperbagspritesheet_1: 7658885298898678379
-      catpaperbagspritesheet_10: -900854791777611611
-      catpaperbagspritesheet_11: -8849715228136027364
-      catpaperbagspritesheet_2: 5454481642608652020
-      catpaperbagspritesheet_3: -4762573366638220808
-      catpaperbagspritesheet_4: 4683053789976502708
-      catpaperbagspritesheet_5: 6854835502880925123
-      catpaperbagspritesheet_6: -8321895789004006768
-      catpaperbagspritesheet_7: 4500215722745026939
-      catpaperbagspritesheet_8: -5363431529644396330
-      catpaperbagspritesheet_9: -8410047567775925655
-  mipmapLimitGroupName: 
+      catpapermasksheet_0: -2808892667195775117
+      catpapermasksheet_1: 7314560962521558929
+      catpapermasksheet_10: -7856372136630608401
+      catpapermasksheet_11: -6098539858928059751
+      catpapermasksheet_2: 2406364972455013093
+      catpapermasksheet_3: -1336513190515112619
+      catpapermasksheet_4: -3658198642141776707
+      catpapermasksheet_5: -6826087338053291629
+      catpapermasksheet_6: -8738470994695383714
+      catpapermasksheet_7: 7695487477704390386
+      catpapermasksheet_8: -6645666606270138202
+      catpapermasksheet_9: -8395546411574964321
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
