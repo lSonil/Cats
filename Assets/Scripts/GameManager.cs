@@ -29,9 +29,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Hide game over panel at start
+        if (gameOverPanel == null)
+        {
+            var panelObject = GameObject.Find("GameOverPanel");
+            if (panelObject != null)
+            {
+                gameOverPanel = panelObject;
+            }
+        }
+
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("GameManager: GameOverPanel is not assigned and was not found in the scene.");
         }
 
         EnsureInput();
