@@ -93,7 +93,18 @@ public class GameManager : MonoBehaviour
             uiMap.Enable();
         }
 
-        restartAction = uiMap?.FindAction("Restart", true);
+        if (uiMap != null)
+        {
+            restartAction = uiMap.FindAction("Restart");
+            if (restartAction != null)
+            {
+                Debug.Log("GameManager: Restart action found and ready.");
+            }
+            else
+            {
+                Debug.LogError("GameManager: Restart action not found in UI action map!");
+            }
+        }
     }
 
     private void OnRestartPerformed(InputAction.CallbackContext context)
@@ -109,7 +120,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Time.timeScale = 0f; // Pause the game
-        if (isGameFinished) return; 
+        if (isGameFinished) return;
 
         isGameFinished = true;
         EndGame(gameOverPanel);
@@ -136,7 +147,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Panel-ul de UI nu a fost asignat în Inspector!");
+            Debug.LogError("Panel-ul de UI nu a fost asignat ï¿½n Inspector!");
         }
     }
 
