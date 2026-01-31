@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [Header("Input Settings")]
+    public InputActionReference restartAction;
 
     [Header("Game Over Settings")]
     public GameObject gameOverPanel;
@@ -31,10 +35,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        if (restartAction != null)
+        {
+            restartAction.action.Enable();
+        }
+    }
+
+    void OnDisable()
+    {
+        if (restartAction != null)
+        {
+            restartAction.action.Disable();
+        }
+    }
+
     void Update()
     {
-        // Allow restart by pressing R when game is over
-        if (isGameOver && Input.GetKeyDown(KeyCode.R))
+        // Allow restart at any time
+        if (restartAction != null && restartAction.action.WasPressedThisFrame())
         {
             RestartGame();
         }
@@ -56,7 +76,7 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Game Over Panel is not assigned!");
         }
 
-        Debug.Log("Game Over! Press R to restart.");
+        Debug.Log("Game Over! Press Restart to restart.");
     }
 
     public void RestartGame()
