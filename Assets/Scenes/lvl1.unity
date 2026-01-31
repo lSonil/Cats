@@ -2978,8 +2978,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 13483459860295313, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13483459860295313, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 13483459860295313, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Offset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13483459860295313, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 233103102435362663, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 943684333039080446, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_Name
@@ -2989,6 +3005,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 06868964821c7b44ebb0ae191938a02f, type: 2}
+    - target: {fileID: 2424485232476519530, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: checkRadius
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7740483321218029838, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.28
@@ -3029,7 +3049,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8010583117603958084, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010583117603958084, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010583117603958084, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Offset.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 198284187975384955, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
