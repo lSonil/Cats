@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7277137609515875118}
   - component: {fileID: 4121337119264655243}
   - component: {fileID: 4117366344064406433}
+  - component: {fileID: 737575286299858334}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -147,7 +148,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8010583117603958084
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +273,21 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &737575286299858334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943684333039080446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a164fa4f3e0ff014098931b07c649e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Camera_Controller
+  Cam_X_Multiplier: 1
+  Cam_Y_Multiplier: 1
+  Camera_Target: {fileID: 2626242810564304094}
 --- !u!1 &2626242810564304094
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +328,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7254132850855272877}
+  - component: {fileID: 6038024445387122453}
   m_Layer: 0
   m_Name: Camera_Position
   m_TagString: Player_Camera_Position
@@ -334,6 +351,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7740483321218029838}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6038024445387122453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4006062771574162830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ed0441ee97e23499e8cb753c5e1c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player_Camera
+  Camera_target: {fileID: 2626242810564304094}
+  smooth_time: 0.25
+  Camera_Velocity: {x: 1, y: 1}
 --- !u!1 &4246348793377971699
 GameObject:
   m_ObjectHideFlags: 0
