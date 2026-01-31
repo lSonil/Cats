@@ -23,6 +23,15 @@ public class PlayerInventory : MonoBehaviour
                 DropItem();
             }
         }
+        if (currentHeldItem != null && currentHeldItem.isTimed)
+        {
+            currentHeldItem.timeRemaining -= Time.deltaTime;
+
+            if (currentHeldItem.timeRemaining <= 0)
+            {
+                DropAndDestroyItem();
+            }
+        }
     }
 
     void UpdateClosest()
@@ -70,6 +79,13 @@ public class PlayerInventory : MonoBehaviour
     {
         currentHeldItem.Drop();
         currentHeldItem = null;
+    }
+    void DropAndDestroyItem()
+    {
+        currentHeldItem.Drop();
+        GameObject gj = currentHeldItem.gameObject;
+        currentHeldItem = null;
+        Destroy(gj);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
