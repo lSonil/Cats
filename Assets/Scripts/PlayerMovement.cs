@@ -1,11 +1,14 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // Adăugăm această bibliotecă
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 8f;
-    public float jumpForce = 14f;
+
+    [Header("Jump Charge Settings")]
+    public float minJump = 10f; // Set higher so tap jump feels real
+    public float maxJump = 25f;
 
     [Header("Detection Settings")]
     public Transform groundCheck;
@@ -13,46 +16,86 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
-    private Vector2 moveInput; // Schimbat din float în Vector2 pentru noul sistem
+    private Vector2 moveInput;
     private bool isGrounded;
-    private PlayerInput playerInput;
+    private float jumpChargeTimer;
+    private bool isCharging;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
+    [Header("Idler animation")]
+    public float idleThreshold = 5.0f; // Time in seconds before becoming "bored"
+    private float idleTimer = 0f;
+    public bool isIdleLongTime = false; // The flag
 
-        // Fix pentru warning-ul despre project-wide actions asset
-        playerInput = GetComponent<PlayerInput>();
-        if (playerInput != null)
-        {
-            playerInput.actions.Disable();
-            playerInput.actions.FindActionMap("Player").Enable();
-        }
-    }
+    void Start() => rb = GetComponent<Rigidbody2D>();
+    public bool Grounded() => isGrounded;
+    public bool Gharging() => isCharging;
+    public bool Idle() => isIdleLongTime;
+    public bool Moving() => moveInput!=Vector2.zero;
+    public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
 
-    // Această funcție va fi apelată automat de componenta Player Input
-    public void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }
-
-    // Această funcție va fi apelată automat când apeși oricare tastă de Jump (Space/W/Up)
+    // This function runs on BOTH press and release if Action Type is "Pass Through"
     public void OnJump(InputValue value)
     {
-        if (value.isPressed && isGrounded)
+        if (value.isPressed)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            if (isGrounded)
+            {
+                isCharging = true;
+                jumpChargeTimer = 0f;
+            }
         }
+        else // This is the "Key Unpress"
+        {
+            if (isCharging)
+            {
+                PerformJump();
+            }
+        }
+    }
+
+    private void PerformJump()
+    {
+        float chargePercent = Mathf.Clamp01(jumpChargeTimer);
+        float finalJumpForce = Mathf.Lerp(minJump, maxJump, chargePercent);
+
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, finalJumpForce);
+
+        isCharging = false;
+        jumpChargeTimer = 0f;
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+
+        if (isCharging)
+        {
+            jumpChargeTimer += Time.deltaTime;
+        }
     }
 
     void FixedUpdate()
     {
-        // Aplicăm mișcarea pe axa X folosind moveInput.x
         rb.linearVelocity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocity.y);
+
+        if (moveInput.x != 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = (moveInput.x < 0);
+        }
+
+        if (moveInput.x == 0)
+        {
+            idleTimer += Time.fixedDeltaTime;
+
+            if (idleTimer >= idleThreshold)
+            {
+                isIdleLongTime = true;
+            }
+        }
+        else
+        {
+            idleTimer = 0f;
+            isIdleLongTime = false;
+        }
     }
 }
