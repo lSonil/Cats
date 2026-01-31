@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     public float ReturnSpeed => returnSpeed;
     public float ArrivedThreshold => arrivedThreshold;
     public Rigidbody2D Rb => rb;
+    public bool IsMoving { get; private set; }
 
     private Rigidbody2D rb;
     private IEnemyState currentState;
@@ -93,6 +94,10 @@ public class EnemyAI : MonoBehaviour
         {
             currentState.Update(this);
         }
+
+        IsMoving = currentState is ChaseState ||
+                   currentState is ReturnState ||
+                   (currentState is IdleState && patrolOnIdle);
     }
     public void SetSit()
     {

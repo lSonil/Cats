@@ -138,13 +138,13 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        
+
         Time.timeScale = 0f; // Pause the game
         if (isGameFinished) return;
 
         isGameFinished = true;
         EndGame(gameOverPanel);
-        Debug.Log("Game Over! Ai pierdut.");
+        Debug.Log("Game Over! You lost.");
     }
 
 
@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
 
         isGameFinished = true;
         EndGame(winPanel);
-        Debug.Log("Victorie! Felicit?ri!");
+        Debug.Log("Victory! Congratulations!");
     }
 
     private void EndGame(GameObject panelToActivate)
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Panel-ul de UI nu a fost asignat �n Inspector!");
+            Debug.LogError("UI panel is not assigned in the Inspector!");
         }
     }
 
