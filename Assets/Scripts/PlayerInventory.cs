@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -11,17 +12,23 @@ public class PlayerInventory : MonoBehaviour
     void Update()
     {
         UpdateClosest();
+    }
 
-        if (Input.GetKeyDown(KeyCode.E))
+    // Called automatically by Player Input (Send Messages) when Interact is pressed
+    public void OnInteract(InputValue value)
+    {
+        if (!value.isPressed)
         {
-            if (closest != null)
-            {
-                PickUpClosest();
-            }
-            else if (currentHeldItem != null)
-            {
-                DropItem();
-            }
+            return;
+        }
+
+        if (closest != null)
+        {
+            PickUpClosest();
+        }
+        else if (currentHeldItem != null)
+        {
+            DropItem();
         }
     }
 
