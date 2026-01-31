@@ -14,6 +14,7 @@ public class ReturnState : IEnemyState
         if (enemy.ShouldChasePlayer())
         {
             Debug.Log("ReturnState: Player became a threat again, switching to Chase");
+            enemy.SetGo();
             enemy.ChangeState(new ChaseState());
             return;
         }
@@ -28,6 +29,7 @@ public class ReturnState : IEnemyState
         {
             Debug.Log("ReturnState: Arrived at start position, switching to Idle");
             enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
+            enemy.SetSit();
             enemy.ChangeState(new IdleState());
             return;
         }

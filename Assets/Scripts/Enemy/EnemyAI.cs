@@ -31,10 +31,12 @@ public class EnemyAI : MonoBehaviour
     private Transform playerTransform;
     private PlayerInventory playerInventory;
     private Vector3 startPosition;
+    Animator ar;
 
 
     void Start()
     {
+        ar = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
 
@@ -57,6 +59,7 @@ public class EnemyAI : MonoBehaviour
 
         // Initialize with Idle state
         ChangeState(new IdleState());
+        SetGo();
     }
 
     void OnDisable()
@@ -73,6 +76,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (IsPlayerHoldingCorrectItem())
             {
+                SetGo();
                 ChangeState(new ReturnState());
             }
         }
@@ -80,6 +84,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (ShouldChasePlayer())
             {
+                SetGo();
                 ChangeState(new ChaseState());
             }
         }
@@ -89,7 +94,14 @@ public class EnemyAI : MonoBehaviour
             currentState.Update(this);
         }
     }
-
+    public void SetSit()
+    {
+        ar.SetBool("Moving", false);
+    }
+    public void SetGo()
+    {
+        ar.SetBool("Moving", true);
+    }
     public void ChangeState(IEnemyState newState)
     {
         // Exit current state
@@ -150,6 +162,7 @@ public class EnemyAI : MonoBehaviour
         if (currentState is ChaseState && newItem != null && newItem.itemId == Dog_Id)
         {
             ChangeState(new ReturnState());
+            SetGo();
         }
     }
 
