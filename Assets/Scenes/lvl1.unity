@@ -1803,6 +1803,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6939475673099365638, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7621051517399557995, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -2135,6 +2139,10 @@ PrefabInstance:
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939475673099365638, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7621051517399557995, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_Name
@@ -3117,8 +3125,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2094485845654695556, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
-      propertyPath: chaseSpeed
-      value: 10
+      propertyPath: detectionDistance
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3159,6 +3167,10 @@ PrefabInstance:
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939475673099365638, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7621051517399557995, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_Name
