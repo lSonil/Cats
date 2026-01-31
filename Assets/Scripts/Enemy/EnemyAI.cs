@@ -11,6 +11,9 @@ public class EnemyAI : MonoBehaviour
     public float detectionDistance = 3f;
     public float chaseSpeed = 2f;
 
+    [Header("ID Settings")]
+    public int Dog_Id;
+
     // Public properties for states to access
     public float PatrolSpeed => patrolSpeed;
     public float PatrolDistance => patrolDistance;
@@ -21,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     private IEnemyState currentState;
     private Transform playerTransform;
     private bool isChasing = false;
+
 
     void Start()
     {
@@ -83,8 +87,15 @@ public class EnemyAI : MonoBehaviour
         // Check if enemy collided with player
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Trigger game over
-            GameManager.Instance.GameOver();
+            if (collision.gameObject.GetComponent<PlayerInventory>().currentHeldItem == null)
+            {
+                GameManager.Instance.GameOver();
+                return;
+            }
+            if (collision.gameObject.GetComponent<PlayerInventory>().currentHeldItem.itemId != Dog_Id) 
+            {
+                GameManager.Instance.GameOver();
+            }
         }
     }
 }
