@@ -27,5 +27,6 @@ public class PlayerAnimation : MonoBehaviour
         ar.SetBool("prepJump",pm.Gharging());
         ar.SetBool("inAir",!pm.Grounded());
         ar.SetBool("isIdle", pm.Idle());
+        ar.SetBool("isFalling", pm.Falling());
     }
 }
