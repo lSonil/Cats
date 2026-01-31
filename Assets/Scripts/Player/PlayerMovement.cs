@@ -115,4 +115,10 @@ public class PlayerMovement : MonoBehaviour
             isIdleLongTime = false;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
+    }
 }

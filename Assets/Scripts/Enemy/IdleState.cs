@@ -58,4 +58,5 @@ public class IdleState : IEnemyState
         scale.x *= -1;
         enemy.transform.localScale = scale;
     }
+
 }
