@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class PlayerInventory : MonoBehaviour
     private float interactPressTime = -1f;
     private bool interactWasPressed = false;
     private InputAction interactAction;
+
+    public event Action<Item> HeldItemChanged;
 
     void Start()
     {
@@ -89,7 +92,7 @@ public class PlayerInventory : MonoBehaviour
                 SwapItems();
             }
         }
-        
+
         if (currentHeldItem != null && currentHeldItem.isTimed)
         {
             currentHeldItem.timeRemaining -= Time.deltaTime;
@@ -127,6 +130,17 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    private void SetHeldItem(Item newItem)
+    {
+        if (currentHeldItem == newItem)
+        {
+            return;
+        }
+
+        currentHeldItem = newItem;
+        HeldItemChanged?.Invoke(currentHeldItem);
+    }
+
     void PickUpClosest()
     {
         Item toRememberClosest = closest;
@@ -134,7 +148,7 @@ public class PlayerInventory : MonoBehaviour
         {
             DropItem();
         }
-        currentHeldItem = toRememberClosest;
+        SetHeldItem(toRememberClosest);
         currentHeldItem.PickUp(transform);
 
         nearbyItems.Remove(currentHeldItem);
@@ -147,7 +161,7 @@ public class PlayerInventory : MonoBehaviour
         // Drop current item and pick up the new one
         Item itemToPickUp = closest;
         DropItem();
-        currentHeldItem = itemToPickUp;
+        SetHeldItem(itemToPickUp);
         currentHeldItem.PickUp(transform);
 
         nearbyItems.Remove(currentHeldItem);
@@ -157,14 +171,24 @@ public class PlayerInventory : MonoBehaviour
 
     void DropItem()
     {
+        if (currentHeldItem == null)
+        {
+            return;
+        }
+
         currentHeldItem.Drop();
-        currentHeldItem = null;
+        SetHeldItem(null);
     }
     void DropAndDestroyItem()
     {
+        if (currentHeldItem == null)
+        {
+            return;
+        }
+
         currentHeldItem.Drop();
         GameObject gj = currentHeldItem.gameObject;
-        currentHeldItem = null;
+        SetHeldItem(null);
         Destroy(gj);
     }
 
@@ -178,7 +202,7 @@ public class PlayerInventory : MonoBehaviour
         Item itemToThrow = currentHeldItem;
         itemToThrow.gameObject.SetActive(true);
         itemToThrow.transform.position = transform.position;
-        currentHeldItem = null;
+        SetHeldItem(null);
 
         //Debug.Log("Throw Triggered");
 
@@ -186,7 +210,7 @@ public class PlayerInventory : MonoBehaviour
         Rigidbody2D rb = itemToThrow.GetComponent<Rigidbody2D>();
         if (this.GetComponent<SpriteRenderer>().flipX == true)
         {
-             throwDirection = new Vector2(-1f, 0.7f).normalized;
+            throwDirection = new Vector2(-1f, 0.7f).normalized;
         }
         else
         {

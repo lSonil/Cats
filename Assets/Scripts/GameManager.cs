@@ -47,6 +47,25 @@ public class GameManager : MonoBehaviour
             Debug.LogError("GameManager: GameOverPanel is not assigned and was not found in the scene.");
         }
 
+        if (winPanel == null)
+        {
+            var panelObject = GameObject.Find("WinPanel");
+            if (panelObject != null)
+            {
+                winPanel = panelObject;
+            }
+        }
+
+        if (winPanel != null)
+        {
+            winPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("GameManager: WinPanel is not assigned and was not found in the scene.");
+        }
+
+
         EnsureInput();
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (winPanel != null) winPanel.SetActive(false);
@@ -119,6 +138,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        
         Time.timeScale = 0f; // Pause the game
         if (isGameFinished) return;
 
@@ -155,5 +175,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("Scene reloaded.");
     }
 }
