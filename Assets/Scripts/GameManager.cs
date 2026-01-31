@@ -7,39 +7,58 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Input Settings")]
-    public InputActionReference restartAction;
+    public PlayerInput playerInput;
 
-    [Header("Game Over Settings")]
+    [Header("UI Panels")]
     public GameObject gameOverPanel;
+    public GameObject winPanel;
 
-    private bool isGameOver = false;
+    private InputAction restartAction;
+    private bool isGameFinished = false;
 
     void Awake()
     {
-        // Singleton pattern - ensure only one GameManager exists
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
     }
 
     void Start()
     {
         // Hide game over panel at start
+        if (gameOverPanel == null)
+        {
+            var panelObject = GameObject.Find("GameOverPanel");
+            if (panelObject != null)
+            {
+                gameOverPanel = panelObject;
+            }
+        }
+
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
         }
+        else
+        {
+            Debug.LogError("GameManager: GameOverPanel is not assigned and was not found in the scene.");
+        }
+
+        EnsureInput();
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (winPanel != null) winPanel.SetActive(false);
     }
 
     void OnEnable()
     {
+        EnsureInput();
         if (restartAction != null)
         {
-            restartAction.action.Enable();
+            restartAction.performed += OnRestartPerformed;
+            restartAction.Enable();
         }
     }
 
@@ -47,41 +66,94 @@ public class GameManager : MonoBehaviour
     {
         if (restartAction != null)
         {
-            restartAction.action.Disable();
+            restartAction.performed -= OnRestartPerformed;
         }
     }
 
-    void Update()
+    private void EnsureInput()
     {
-        // Allow restart at any time
-        if (restartAction != null && restartAction.action.WasPressedThisFrame())
+        if (playerInput == null)
         {
-            RestartGame();
+            var playerObject = GameObject.Find("Player");
+            if (playerObject != null)
+            {
+                playerInput = playerObject.GetComponent<PlayerInput>();
+            }
         }
+
+        if (playerInput == null)
+        {
+            Debug.LogWarning("GameManager: PlayerInput reference is not assigned and Player object was not found.");
+            return;
+        }
+
+        var uiMap = playerInput.actions.FindActionMap("UI");
+        if (uiMap != null && !uiMap.enabled)
+        {
+            uiMap.Enable();
+        }
+
+        if (uiMap != null)
+        {
+            restartAction = uiMap.FindAction("Restart");
+            if (restartAction != null)
+            {
+                Debug.Log("GameManager: Restart action found and ready.");
+            }
+            else
+            {
+                Debug.LogError("GameManager: Restart action not found in UI action map!");
+            }
+        }
+    }
+
+    private void OnRestartPerformed(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+        {
+            return;
+        }
+
+        RestartGame();
     }
 
     public void GameOver()
     {
-        isGameOver = true;
         Time.timeScale = 0f; // Pause the game
+        if (isGameFinished) return;
 
-        // Show game over panel
-        if (gameOverPanel != null)
+        isGameFinished = true;
+        EndGame(gameOverPanel);
+        Debug.Log("Game Over! Ai pierdut.");
+    }
+
+
+    public void Victory()
+    {
+        if (isGameFinished) return;
+
+        isGameFinished = true;
+        EndGame(winPanel);
+        Debug.Log("Victorie! Felicit?ri!");
+    }
+
+    private void EndGame(GameObject panelToActivate)
+    {
+        Time.timeScale = 0f;
+
+        if (panelToActivate != null)
         {
-            gameOverPanel.SetActive(true);
-            Debug.Log("Panel activated! Active state: " + gameOverPanel.activeSelf);
+            panelToActivate.SetActive(true);
         }
         else
         {
-            Debug.LogError("Game Over Panel is not assigned!");
+            Debug.LogError("Panel-ul de UI nu a fost asignat �n Inspector!");
         }
-
-        Debug.Log("Game Over! Press Restart to restart.");
     }
 
     public void RestartGame()
     {
-        Time.timeScale = 1f; // Resume game time
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
