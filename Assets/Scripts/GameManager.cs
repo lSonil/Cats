@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (playerInput == null)
         {
-            var playerObject = GameObject.Find("Player");
+            var playerObject = GameObject.Find("Player_Entity");
             if (playerObject != null)
             {
                 playerInput = playerObject.GetComponent<PlayerInput>();
