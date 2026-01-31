@@ -60,7 +60,6 @@ public class EnemyAI : MonoBehaviour
 
         // Initialize with Idle state
         ChangeState(new IdleState());
-        SetGo();
     }
 
     void OnDisable()
@@ -77,7 +76,6 @@ public class EnemyAI : MonoBehaviour
         {
             if (IsPlayerHoldingCorrectItem())
             {
-                SetGo();
                 ChangeState(new ReturnState());
             }
         }
@@ -85,7 +83,6 @@ public class EnemyAI : MonoBehaviour
         {
             if (ShouldChasePlayer())
             {
-                SetGo();
                 ChangeState(new ChaseState());
             }
         }
@@ -98,14 +95,7 @@ public class EnemyAI : MonoBehaviour
         IsMoving = currentState is ChaseState ||
                    currentState is ReturnState ||
                    (currentState is IdleState && patrolOnIdle);
-    }
-    public void SetSit()
-    {
-        ar.SetBool("Moving", false);
-    }
-    public void SetGo()
-    {
-        ar.SetBool("Moving", true);
+        ar.SetBool("Moving", IsMoving);
     }
     public void ChangeState(IEnemyState newState)
     {
@@ -167,7 +157,6 @@ public class EnemyAI : MonoBehaviour
         if (currentState is ChaseState && newItem != null && newItem.itemId == Dog_Id)
         {
             ChangeState(new ReturnState());
-            SetGo();
         }
     }
 
@@ -192,5 +181,41 @@ public class EnemyAI : MonoBehaviour
                 GameManager.Instance.GameOver();
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // --- PATROL BOUNDARIES ---
+        Vector3 startPos = Application.isPlaying ? GetStartPosition() : transform.position;
+
+        float halfWidth = 0f;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            halfWidth = col.bounds.extents.x;
+        }
+
+        // Calculate the "Hard Stop" points (center distance + body width)
+        Vector3 leftBound = startPos + Vector3.left * (PatrolDistance + halfWidth);
+        Vector3 rightBound = startPos + Vector3.right * (PatrolDistance + halfWidth);
+
+        // Draw Vertical Boundary Lines
+        Gizmos.color = Color.cyan;
+        float h = 1.5f; // Height of the line
+        Gizmos.DrawLine(leftBound + Vector3.down * h, leftBound + Vector3.up * h);
+        Gizmos.DrawLine(rightBound + Vector3.down * h, rightBound + Vector3.up * h);
+
+        // Draw connecting path line
+        Gizmos.color = new Color(0, 1, 1, 0.2f);
+        Gizmos.DrawLine(leftBound, rightBound);
+
+
+        // --- DETECTION RANGE ---
+        // This circle stays centered on the enemy as they move
+        Gizmos.color = Color.red;
+
+        // Ensure you have a 'detectionRange' variable in your EnemyAI script!
+        // If it's named differently, swap it out here.
+        Gizmos.DrawWireSphere(transform.position, detectionDistance);
     }
 }

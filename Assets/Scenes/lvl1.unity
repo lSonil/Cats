@@ -1718,13 +1718,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2094485845654695556, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
+      propertyPath: patrolDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.89
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.39
+      value: -6.5
       objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2051,13 +2055,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2094485845654695556, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
+      propertyPath: patrolDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.41
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.43
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 5532931504876019534, guid: 9042073a8537a504ebb63706021f6ec5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2853,6 +2861,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1811981045}
+    - target: {fileID: 3337862214500686962, guid: cddb63654d5eebc4e9ba38ae181d1b81, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4661837291606727359, guid: cddb63654d5eebc4e9ba38ae181d1b81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2973,6 +2985,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Entity
       objectReference: {fileID: 0}
+    - target: {fileID: 1558964999995567254, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 06868964821c7b44ebb0ae191938a02f, type: 2}
     - target: {fileID: 7740483321218029838, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.28
