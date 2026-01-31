@@ -180,11 +180,21 @@ public class PlayerInventory : MonoBehaviour
         itemToThrow.transform.position = transform.position;
         currentHeldItem = null;
 
-        Debug.Log("Throw Triggered");
+        //Debug.Log("Throw Triggered");
 
+        Vector2 throwDirection;
         Rigidbody2D rb = itemToThrow.GetComponent<Rigidbody2D>();
-        Vector2 throwDirection = new Vector2(1f, 0.7f).normalized;
+        if (this.GetComponent<SpriteRenderer>().flipX == true)
+        {
+             throwDirection = new Vector2(-1f, 0.7f).normalized;
+        }
+        else
+        {
+            throwDirection = new Vector2(1f, 0.7f).normalized;
+        }
+
         rb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
