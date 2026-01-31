@@ -246,6 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   nearbyItems: []
   currentHeldItem: {fileID: 0}
+  throwForce: 5
+  holdThreshold: 0.3
 --- !u!114 &4117366344064406433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4ed0441ee97e23499e8cb753c5e1c26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Camera
-  Camera_target: {fileID: 2626242810564304094}
+  Camera_Target: {fileID: 0}
   smooth_time: 0.25
   Camera_Velocity: {x: 1, y: 1}
 --- !u!1 &4246348793377971699
@@ -381,8 +383,8 @@ GameObject:
   - component: {fileID: 1882694272591241737}
   - component: {fileID: 13483459860295313}
   m_Layer: 0
-  m_Name: ItemPickUpCollider
-  m_TagString: Untagged
+  m_Name: InteractionCollider
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
