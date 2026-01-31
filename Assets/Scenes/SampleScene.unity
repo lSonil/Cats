@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43bbe0976a37cf4f85dc7de72816a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  restartAction: {fileID: 6750704050030701062, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   gameOverPanel: {fileID: 841380603}
 --- !u!4 &1074711001
 Transform:
@@ -790,8 +791,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1856984158}
   - component: {fileID: 1856984162}
-  - component: {fileID: 1856984161}
   - component: {fileID: 1856984159}
+  - component: {fileID: 1856984161}
   - component: {fileID: 1856984163}
   m_Layer: 0
   m_Name: Enemy
@@ -809,7 +810,7 @@ Transform:
   m_GameObject: {fileID: 1856984157}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -1.33, z: 0}
+  m_LocalPosition: {x: 5.57, y: -1.33, z: 0}
   m_LocalScale: {x: 0.19445, y: 0.20115, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -827,8 +828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc14baaa37bfc24ebd617e37a9f2539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI
-  patrolSpeed: 2
-  patrolDistance: 5
+  patrolOnIdle: 1
+  patrolSpeed: 1
+  patrolDistance: 2
+  detectionDistance: 3
+  chaseSpeed: 2
 --- !u!50 &1856984161
 Rigidbody2D:
   serializedVersion: 5
