@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Item
+  - Camera_target
+  - Player_Camera_Position
+  - Enemy
   layers:
   - Default
   - TransparentFX
