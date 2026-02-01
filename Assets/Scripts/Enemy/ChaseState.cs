@@ -55,8 +55,17 @@ public class ChaseState : IEnemyState
             Flip(enemy);
         }
 
-        // Move towards player
-        enemy.Rb.linearVelocity = new Vector2(directionToPlayer * enemy.ChaseSpeed, enemy.Rb.linearVelocity.y);
+        // Check for wall in movement direction
+        if (enemy.IsWallInDirection(directionToPlayer))
+        {
+            // Hit a wall, stop movement but stay in chase state facing the wall
+            enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
+        }
+        else
+        {
+            // Move towards player
+            enemy.Rb.linearVelocity = new Vector2(directionToPlayer * enemy.ChaseSpeed, enemy.Rb.linearVelocity.y);
+        }
     }
 
     private void Flip(EnemyAI enemy)

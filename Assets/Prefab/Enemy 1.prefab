@@ -111,9 +111,12 @@ MonoBehaviour:
   patrolSpeed: 1
   patrolDistance: 2
   detectionDistance: 6
+  detectionHeight: 2
   chaseSpeed: 10
   returnSpeed: 1.5
-  arrivedThreshold: 0.2
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 520
   Dog_Id: 2
 --- !u!50 &1732788223466115788
 Rigidbody2D:
