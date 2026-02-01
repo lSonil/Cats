@@ -19,7 +19,12 @@ public class ChaseState : IEnemyState
 
     public void Exit(EnemyAI enemy)
     {
-        // Cleanup if needed when leaving this state
+        // Clear wall blocked flag when exiting chase state
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("WallBlocked", false);
+        }
     }
 
     private void Chase(EnemyAI enemy)
@@ -82,9 +87,12 @@ public class ChaseState : IEnemyState
         {
             // Hit a wall, stop movement but stay in chase state facing the wall
             enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
+            enemy.GetComponent<Animator>().SetBool("WallBlocked", true);
         }
         else
         {
+            // Clear wall blocked flag if wall is no longer in the way
+            enemy.GetComponent<Animator>().SetBool("WallBlocked", false);
             // Move towards player
             enemy.Rb.linearVelocity = new Vector2(directionToPlayer * enemy.ChaseSpeed, enemy.Rb.linearVelocity.y);
         }
