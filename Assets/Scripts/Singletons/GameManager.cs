@@ -302,6 +302,12 @@ public class GameManager : MonoBehaviour
         {
             sceneName = CREDITS_SCENE_NAME;
             currentLevel = CREDITS_LEVEL_ID;
+
+            // Set credits scene to behave like victory screen (Enter to return to menu)
+            isGameFinished = true;
+            isLevelWon = true;
+            pauseAvailable = false;
+            restartAvailable = false;
         }
         else
         {
