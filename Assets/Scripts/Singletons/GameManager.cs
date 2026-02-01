@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     #region Constants
     private const string MAIN_MENU_SCENE_NAME = "MainMenu";
     private const string LEVEL_SCENE_PREFIX = "lvl";
+    private const string CREDITS_SCENE_NAME = "Credits";
     private const string PLAYER_NAME = "Player_Entity";
     private const string CAMERA_POSITION_TAG = "Player_Camera_Position";
     private const string CAMERA_TARGET_TAG = "Camera_target";
     private const int MAIN_MENU_LEVEL_ID = 0;
+    private const int CREDITS_LEVEL_ID = 99;
+    private const int MAX_GAME_LEVEL = 5;
     #endregion
 
     #region Serialized Fields
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
     private bool pauseAvailable = false;
     private bool restartAvailable = false;
     private bool isGameFinished = false;
+    private bool isLevelWon = false;
     private int currentLevel = MAIN_MENU_LEVEL_ID;
     private PlayerInput cachedPlayerInput;
     private Scene? currentGameScene = null;
@@ -109,7 +113,11 @@ public class GameManager : MonoBehaviour
     #region Input Handling
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.R) && restartAvailable)
+        if (Input.GetKeyDown(KeyCode.Return) && isLevelWon)
+        {
+            LoadNext();
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && restartAvailable)
         {
             RestartGame();
         }
@@ -156,6 +164,7 @@ public class GameManager : MonoBehaviour
         if (isGameFinished) return;
 
         isGameFinished = true;
+        isLevelWon = true;
         pauseAvailable = false;
         SetTimeScale(0f);
         ShowPanel(WinPanel);
@@ -230,7 +239,15 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void LoadNext()
     {
-        LoadLevel(currentLevel + 1);
+        // If on credits, return to main menu
+        if (currentLevel == CREDITS_LEVEL_ID)
+        {
+            LoadLevel(MAIN_MENU_LEVEL_ID);
+        }
+        else
+        {
+            LoadLevel(currentLevel + 1);
+        }
     }
 
     /// <summary>
@@ -249,6 +266,7 @@ public class GameManager : MonoBehaviour
     {
         pauseAvailable = false;
         restartAvailable = false;
+        isLevelWon = false;
         cachedPlayerInput = null; // Clear cache since Player will be destroyed
 
         // Unload current game scene if one is loaded
@@ -266,9 +284,21 @@ public class GameManager : MonoBehaviour
     {
         pauseAvailable = true;
         restartAvailable = true;
+        isLevelWon = false;
         cachedPlayerInput = null; // Clear cache when loading new level
 
-        string sceneName = LEVEL_SCENE_PREFIX + levelID;
+        string sceneName;
+
+        // Level 6+ redirects to credits
+        if (levelID > MAX_GAME_LEVEL)
+        {
+            sceneName = CREDITS_SCENE_NAME;
+            currentLevel = CREDITS_LEVEL_ID;
+        }
+        else
+        {
+            sceneName = LEVEL_SCENE_PREFIX + levelID;
+        }
 
         // Unload current game scene before loading new one
         if (currentGameScene.HasValue)
