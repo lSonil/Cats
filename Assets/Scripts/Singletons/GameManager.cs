@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+        print(1);
         Instance = this;
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -226,6 +227,7 @@ public class GameManager : MonoBehaviour
     /// <param name="LevelID">The level ID to load. 0 for main menu, 1+ for game levels.</param>
     public void LoadLevel(int LevelID)
     {
+        isGameFinished = false;
         currentLevel = LevelID;
         SetPanelsActive(gameOver: false, win: false, pause: false, mainMenu: false);
 

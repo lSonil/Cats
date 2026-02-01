@@ -247,6 +247,7 @@ public class EnemyAI : MonoBehaviour
 
             if (inventory == null || inventory.currentHeldItem == null)
             {
+
                 GameManager.Instance.GameOver();
                 return;
             }
