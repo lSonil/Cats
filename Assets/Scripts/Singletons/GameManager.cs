@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private bool pauseAvailable = false;
     private bool restartAvailable = false;
     private bool isGameFinished = false;
+    private bool isLevelWon = false;
     private int currentLevel = MAIN_MENU_LEVEL_ID;
     private PlayerInput cachedPlayerInput;
     private Scene? currentGameScene = null;
@@ -109,7 +110,11 @@ public class GameManager : MonoBehaviour
     #region Input Handling
     private void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.R) && restartAvailable)
+        if (Input.GetKeyDown(KeyCode.Return) && isLevelWon)
+        {
+            LoadNext();
+        }
+        else if (Input.GetKeyDown(KeyCode.R) && restartAvailable)
         {
             RestartGame();
         }
@@ -156,6 +161,7 @@ public class GameManager : MonoBehaviour
         if (isGameFinished) return;
 
         isGameFinished = true;
+        isLevelWon = true;
         pauseAvailable = false;
         SetTimeScale(0f);
         ShowPanel(WinPanel);
@@ -249,6 +255,7 @@ public class GameManager : MonoBehaviour
     {
         pauseAvailable = false;
         restartAvailable = false;
+        isLevelWon = false;
         cachedPlayerInput = null; // Clear cache since Player will be destroyed
 
         // Unload current game scene if one is loaded
@@ -266,6 +273,7 @@ public class GameManager : MonoBehaviour
     {
         pauseAvailable = true;
         restartAvailable = true;
+        isLevelWon = false;
         cachedPlayerInput = null; // Clear cache when loading new level
 
         string sceneName = LEVEL_SCENE_PREFIX + levelID;
