@@ -10,11 +10,21 @@ public class IdleState : IEnemyState
     public void Enter(EnemyAI enemy)
     {
         startPosition = enemy.GetStartPosition();
-        // Determine initial direction based on current facing direction
-        movingRight = enemy.transform.localScale.x > 0;
+
+        // Determine initial direction based on SpriteRenderer flipX setting
+        // Default: facing left (movingRight = false), unless flipX is checked (then facing right)
+        SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null && spriteRenderer.flipX)
+        {
+            movingRight = true; // Flip X checked = facing right
+        }
+        else
+        {
+            movingRight = false; // Default = facing left
+        }
+
         // When entering IdleState, disable wall detection for one frame if we came from a wall collision
         wallDetectionCooldown = 2; // Skip for 2 frames to ensure we're stable
-        // Debug.Log($"IdleState: Entered. Start position: {startPosition}, patrolOnIdle: {enemy.patrolOnIdle}, movingRight: {movingRight}");
     }
 
     public void Update(EnemyAI enemy)
