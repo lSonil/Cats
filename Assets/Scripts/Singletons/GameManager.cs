@@ -151,8 +151,10 @@ public class GameManager : MonoBehaviour
 
         isGameFinished = true;
         pauseAvailable = false;
+        restartAvailable = true;
         SetTimeScale(0f);
-        ShowPanel(GameOverPanel);
+        SetPlayerInputEnabled(false);
+        ShowExclusivePanel(GameOverPanel);
         Debug.Log("Game Over! You lost.");
     }
 
@@ -166,8 +168,10 @@ public class GameManager : MonoBehaviour
         isGameFinished = true;
         isLevelWon = true;
         pauseAvailable = false;
+        restartAvailable = true;
         SetTimeScale(0f);
-        ShowPanel(WinPanel);
+        SetPlayerInputEnabled(false);
+        ShowExclusivePanel(WinPanel);
         Debug.Log("Victory! Congratulations!");
     }
 
@@ -191,7 +195,7 @@ public class GameManager : MonoBehaviour
     {
         SetTimeScale(0f);
         restartAvailable = false;
-        ShowPanel(PauseScreen);
+        ShowExclusivePanel(PauseScreen);
         SetPlayerInputEnabled(false);
     }
 
@@ -201,6 +205,7 @@ public class GameManager : MonoBehaviour
     public void UnPauseGame()
     {
         SetTimeScale(1f);
+        restartAvailable = true;
         HidePanel(PauseScreen);
         SetPlayerInputEnabled(true);
     }
@@ -277,7 +282,8 @@ public class GameManager : MonoBehaviour
         }
 
         DisableGameCamera();
-        ShowPanel(MainMenuScreen);
+        SetTimeScale(0f);
+        ShowExclusivePanel(MainMenuScreen);
     }
 
     private void LoadGameLevel(int levelID)
@@ -309,6 +315,7 @@ public class GameManager : MonoBehaviour
         // Load new game scene additively (MainMenu stays loaded)
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         SetTimeScale(1f);
+        SetPlayerInputEnabled(true);
     }
     #endregion
 
@@ -331,6 +338,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("GameManager: Attempted to show a null panel!");
         }
+    }
+
+    private void ShowExclusivePanel(GameObject panel)
+    {
+        // Hide all panels first
+        SetPanelsActive(gameOver: false, win: false, pause: false, mainMenu: false);
+        // Then show the specified panel
+        ShowPanel(panel);
     }
 
     private void HidePanel(GameObject panel)
