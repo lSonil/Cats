@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private const string CAMERA_TARGET_TAG = "Camera_target";
     private const int MAIN_MENU_LEVEL_ID = 0;
     private const int CREDITS_LEVEL_ID = 99;
-    private const int MAX_GAME_LEVEL = 5;
+    private const int MAX_GAME_LEVEL = 2;
     #endregion
 
     #region Serialized Fields

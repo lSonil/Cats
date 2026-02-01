@@ -7,8 +7,18 @@ public class ChaseState : IEnemyState
 
     public void Enter(EnemyAI enemy)
     {
-        // Any setup needed when entering chase state
-        lastDirection = enemy.transform.localScale.x > 0 ? 1f : -1f;
+        // Determine initial facing direction based on SpriteRenderer flipX setting
+        // Default: facing left (lastDirection = -1), unless flipX is checked (then facing right)
+        SpriteRenderer spriteRenderer = enemy.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null && spriteRenderer.flipX)
+        {
+            lastDirection = 1f; // Flip X checked = facing right
+        }
+        else
+        {
+            lastDirection = -1f; // Default = facing left
+        }
+
         timeLostPlayer = 0f; // Reset loss timer
     }
 
