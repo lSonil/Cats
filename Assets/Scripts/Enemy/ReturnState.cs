@@ -21,10 +21,17 @@ public class ReturnState : IEnemyState
         Vector3 target = enemy.GetStartPosition();
         Vector3 current = enemy.transform.position;
 
-        float distance = Vector2.Distance(current, target);
-        // Debug.Log($"ReturnState.Update: Distance to start={distance:F2}, threshold={enemy.ArrivedThreshold:F2}, current={current}, target={target}");
+        // Calculate arrived threshold based on enemy's collider width for consistency
+        float arrivedThreshold = 0.1f; // Default fallback
+        Collider2D collider = enemy.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            arrivedThreshold = collider.bounds.extents.x; // Use half the width as threshold
+        }
 
-        if (distance <= enemy.ArrivedThreshold)
+        float distance = Vector2.Distance(current, target);
+
+        if (distance <= arrivedThreshold)
         {
             // Debug.Log("ReturnState: Arrived at start position, switching to Idle");
             enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);

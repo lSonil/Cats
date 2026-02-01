@@ -14,7 +14,6 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Return Settings")]
     public float returnSpeed = 1.5f;
-    public float arrivedThreshold = 0.2f;
 
     [Header("ID Settings")]
     public int Dog_Id;
@@ -24,7 +23,6 @@ public class EnemyAI : MonoBehaviour
     public float PatrolDistance => patrolDistance;
     public float ChaseSpeed => chaseSpeed;
     public float ReturnSpeed => returnSpeed;
-    public float ArrivedThreshold => arrivedThreshold;
     public Rigidbody2D Rb => rb;
     public bool IsMoving { get; private set; }
 
