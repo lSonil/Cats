@@ -10,6 +10,7 @@ public class PlayerInventory : MonoBehaviour
     public List<Item> nearbyItems = new List<Item>();
     public Item currentHeldItem = null;
     private Item closest = null;
+    public int dogMaskId = 2;
 
     [Header("Throw Settings")]
     public float throwForce = 5f;
@@ -29,6 +30,7 @@ public class PlayerInventory : MonoBehaviour
         {
             interactAction = playerInput.actions.FindAction("Interact");
         }
+        maxJump=GetComponent<PlayerMovement>().maxJump;
     }
 
     void Update()
@@ -140,6 +142,7 @@ public class PlayerInventory : MonoBehaviour
         currentHeldItem = newItem;
         HeldItemChanged?.Invoke(currentHeldItem);
     }
+    float maxJump;
 
     void PickUpClosest()
     {
@@ -153,7 +156,17 @@ public class PlayerInventory : MonoBehaviour
 
         nearbyItems.Remove(currentHeldItem);
         currentHeldItem.SetGrab(false);
-        closest = null;
+
+        if(currentHeldItem.itemId== dogMaskId)
+        {
+            maxJump = GetComponent<PlayerMovement>().maxJump;
+            GetComponent<PlayerMovement>().maxJump= GetComponent<PlayerMovement>().minJump;
+        }
+        else
+        {
+            GetComponent<PlayerMovement>().maxJump = maxJump;
+        }
+            closest = null;
     }
 
     void SwapItems()
