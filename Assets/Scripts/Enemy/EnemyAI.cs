@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
 
     [Header("Chase Settings")]
     public float detectionDistance = 3f;
+    public float detectionHeight = 2f;
     public float chaseSpeed = 2f;
 
     [Header("Return Settings")]
@@ -132,7 +133,24 @@ public class EnemyAI : MonoBehaviour
             return false;
         }
 
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        // Get the center of the enemy (accounting for collider bounds)
+        Vector3 detectionCenter = transform.position;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            detectionCenter = col.bounds.center;
+        }
+
+        Vector2 offset = playerTransform.position - detectionCenter;
+
+        // Check vertical cap first
+        if (Mathf.Abs(offset.y) >= detectionHeight)
+        {
+            return false;
+        }
+
+        // Check if within circular detection range
+        float distanceToPlayer = offset.magnitude;
         if (distanceToPlayer >= detectionDistance)
         {
             return false;
@@ -189,10 +207,12 @@ public class EnemyAI : MonoBehaviour
         Vector3 startPos = Application.isPlaying ? GetStartPosition() : transform.position;
 
         float halfWidth = 0f;
+        Vector3 enemyPos = transform.position;
         Collider2D col = GetComponent<Collider2D>();
         if (col != null)
         {
             halfWidth = col.bounds.extents.x;
+            enemyPos = col.bounds.center;
         }
 
         // Calculate the "Hard Stop" points (center distance + body width)
@@ -211,11 +231,60 @@ public class EnemyAI : MonoBehaviour
 
 
         // --- DETECTION RANGE ---
-        // This circle stays centered on the enemy as they move
+        // Draw capped circle (circle with horizontal cuts at top/bottom)
         Gizmos.color = Color.red;
 
-        // Ensure you have a 'detectionRange' variable in your EnemyAI script!
-        // If it's named differently, swap it out here.
-        Gizmos.DrawWireSphere(transform.position, detectionDistance);
+        float topY = enemyPos.y + detectionHeight;
+        float bottomY = enemyPos.y - detectionHeight;
+
+        // Calculate the x-width at the cap height using circle equation: x = sqrt(r^2 - y^2)
+        float capWidth = 0f;
+        if (detectionHeight < detectionDistance)
+        {
+            capWidth = Mathf.Sqrt(detectionDistance * detectionDistance - detectionHeight * detectionHeight);
+        }
+
+        // Draw top and bottom cap lines
+        Gizmos.DrawLine(new Vector3(enemyPos.x - capWidth, topY, 0), new Vector3(enemyPos.x + capWidth, topY, 0));
+        Gizmos.DrawLine(new Vector3(enemyPos.x - capWidth, bottomY, 0), new Vector3(enemyPos.x + capWidth, bottomY, 0));
+
+        // Draw the circular arcs (left and right curves)
+        int segments = 64;
+
+        // Calculate the angle at which the circle reaches the cap height
+        // When y = detectionHeight: sin(angle) = detectionHeight / detectionDistance
+        float capAngle = Mathf.Asin(detectionHeight / detectionDistance);
+
+        // Right arc: from bottom-right cap to top-right cap
+        Vector3 prevRightPoint = Vector3.zero;
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = -capAngle + (2 * capAngle) * i / segments; // From -capAngle to +capAngle
+            float x = Mathf.Cos(angle) * detectionDistance;
+            float y = Mathf.Sin(angle) * detectionDistance;
+
+            Vector3 point = new Vector3(x, y, 0);
+            if (i > 0)
+            {
+                Gizmos.DrawLine(enemyPos + prevRightPoint, enemyPos + point);
+            }
+            prevRightPoint = point;
+        }
+
+        // Left arc: from top-left cap to bottom-left cap
+        Vector3 prevLeftPoint = Vector3.zero;
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = Mathf.PI - capAngle + (2 * capAngle) * i / segments; // From (PI - capAngle) to (PI + capAngle)
+            float x = Mathf.Cos(angle) * detectionDistance;
+            float y = Mathf.Sin(angle) * detectionDistance;
+
+            Vector3 point = new Vector3(x, y, 0);
+            if (i > 0)
+            {
+                Gizmos.DrawLine(enemyPos + prevLeftPoint, enemyPos + point);
+            }
+            prevLeftPoint = point;
+        }
     }
 }
