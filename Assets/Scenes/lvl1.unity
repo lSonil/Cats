@@ -2607,6 +2607,18 @@ PrefabInstance:
       propertyPath: minJump
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Top_Limiter
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Right_Limiter
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Bottom_Limiter
+      value: -50
+      objectReference: {fileID: 0}
     - target: {fileID: 7740483321218029838, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.66
@@ -2812,7 +2824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6249940170909817787, guid: b69eb19137df9924381850c4b12c2177, type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6771056165316360204, guid: b69eb19137df9924381850c4b12c2177, type: 3}
       propertyPath: m_Name
