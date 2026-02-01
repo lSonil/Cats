@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
-    public int ItemID; // ID-ul necesar
+    public int ItemID;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Juc?torul a atins u?a!");
+            Debug.Log("Player touched the door.");
 
-            // C?ut?m inventarul pe orice parte a juc?torului
             PlayerInventory inv = collision.gameObject.GetComponentInChildren<PlayerInventory>();
             if (inv == null) inv = collision.gameObject.GetComponentInParent<PlayerInventory>();
 
@@ -18,17 +17,17 @@ public class Lock : MonoBehaviour
             {
                 if (inv.currentHeldItem.itemId == ItemID)
                 {
-                    Debug.Log("ID Corect! Declan??m Victory.");
+                    Debug.Log("Correct ID. Victory!");
                     GameManager.Instance.Victory();
                 }
                 else
                 {
-                    Debug.Log("ID Gresit! Ai: " + inv.currentHeldItem.itemId + " dar trebuie: " + ItemID);
+                    Debug.Log("Wrong ID! You have: " + inv.currentHeldItem.itemId + " but we need: " + ItemID);
                 }
             }
             else
             {
-                Debug.Log("Inventar neg?sit sau mâna e goal?!");
+                Debug.Log("Inventory not found!");
             }
         }
     }
