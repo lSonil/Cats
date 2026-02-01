@@ -582,8 +582,8 @@ Transform:
   m_GameObject: {fileID: 514071375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.3296964, y: -0.55753946, z: 0}
-  m_LocalScale: {x: 1.6785679, y: 1.770725, z: 1}
+  m_LocalPosition: {x: 3.6061, y: -0.7813, z: 0}
+  m_LocalScale: {x: 1.1258155, y: 1.3232628, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1105242923}
@@ -1329,8 +1329,8 @@ Transform:
   m_GameObject: {fileID: 910940497}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.82, y: -0.5576, z: 0}
-  m_LocalScale: {x: 1.6785679, y: 1.770725, z: 1}
+  m_LocalPosition: {x: -0.82, y: -0.7813, z: 0}
+  m_LocalScale: {x: 1.6785679, y: 1.3232628, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1105242923}
@@ -2967,6 +2967,18 @@ PrefabInstance:
     - target: {fileID: 943684333039080446, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_Name
       value: Player_Entity
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Top_Limiter
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Right_Limiter
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038024445387122453, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
+      propertyPath: Cam_Bottom_Limiter
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 7740483321218029838, guid: 71555fdc58c4fe3459ae0f9513dd57b5, type: 3}
       propertyPath: m_LocalPosition.x
