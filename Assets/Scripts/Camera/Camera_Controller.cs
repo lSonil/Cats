@@ -6,9 +6,14 @@ public class Camera_Controller : MonoBehaviour
     public float Cam_Y_Multiplier = 0.25f;
     public GameObject Camera_Target;
     public Rigidbody2D playerRigidbody;
+    [Range(0.1f, 0.9f)]
+    public float VerticalScreenAnchorFromBottom = 0.6666667f;
+
+    private Camera mainCamera;
 
     void Start()
     {
+        mainCamera = Camera.main;
         if (playerRigidbody == null)
         {
             playerRigidbody = GetComponent<Rigidbody2D>();
@@ -46,9 +51,25 @@ public class Camera_Controller : MonoBehaviour
         Vector2 velocity = playerRigidbody.linearVelocity;
         Vector2 lookAhead = velocity.sqrMagnitude > 0.01f ? velocity : Vector2.zero;
 
+        float verticalOffset = 0f;
+        if (mainCamera == null)
+        {
+            mainCamera = Camera.main;
+        }
+
+        if (mainCamera != null && mainCamera.orthographic)
+        {
+            float viewHeight = mainCamera.orthographicSize * 2f;
+            float offsetFactor = 0.5f - VerticalScreenAnchorFromBottom;
+            verticalOffset = viewHeight * offsetFactor;
+        }
+
         // Debug.Log($"Velocity: {velocity}, LookAhead: {lookAhead}, SqrMag: {velocity.sqrMagnitude}");
 
-        Camera_Target.transform.position = playerRigidbody.transform.position + new Vector3(lookAhead.x * Cam_X_Multiplier, lookAhead.y * Cam_Y_Multiplier, 0f);
+        Camera_Target.transform.position = playerRigidbody.transform.position + new Vector3(
+            lookAhead.x * Cam_X_Multiplier,
+            lookAhead.y * Cam_Y_Multiplier - verticalOffset,
+            0f);
 
     }
 }
