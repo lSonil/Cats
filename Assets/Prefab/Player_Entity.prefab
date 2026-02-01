@@ -297,6 +297,7 @@ MonoBehaviour:
   Cam_Y_Multiplier: 0.25
   Camera_Target: {fileID: 0}
   playerRigidbody: {fileID: 0}
+  VerticalScreenAnchorFromBottom: 0.6666667
 --- !u!1 &2626242810564304094
 GameObject:
   m_ObjectHideFlags: 0
