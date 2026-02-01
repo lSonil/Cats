@@ -41,6 +41,25 @@ public class ReturnState : IEnemyState
 
         float direction = Mathf.Sign(target.x - current.x);
 
+        // Check for wall in movement direction
+        if (enemy.IsWallInDirection(direction))
+        {
+            // Hit a wall, stop movement, face away from wall, and go to Idle with patrol disabled
+            enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
+            enemy.patrolOnIdle = false;
+
+            // Face away from the wall (ensure we face opposite direction)
+            float awayDirection = -direction; // Opposite of the blocked direction
+            if ((awayDirection > 0 && enemy.transform.localScale.x < 0) ||
+                (awayDirection < 0 && enemy.transform.localScale.x > 0))
+            {
+                Flip(enemy);
+            }
+
+            enemy.ChangeState(new IdleState());
+            return;
+        }
+
         // Face the direction of travel
         if ((direction > 0 && enemy.transform.localScale.x < 0) ||
             (direction < 0 && enemy.transform.localScale.x > 0))

@@ -3,11 +3,13 @@ using UnityEngine;
 public class ChaseState : IEnemyState
 {
     private float lastDirection = 1f; // Remember the last facing direction
+    private float timeLostPlayer = 0f; // Track how long the player has been out of detection range
 
     public void Enter(EnemyAI enemy)
     {
         // Any setup needed when entering chase state
         lastDirection = enemy.transform.localScale.x > 0 ? 1f : -1f;
+        timeLostPlayer = 0f; // Reset loss timer
     }
 
     public void Update(EnemyAI enemy)
@@ -17,7 +19,12 @@ public class ChaseState : IEnemyState
 
     public void Exit(EnemyAI enemy)
     {
-        // Cleanup if needed when leaving this state
+        // Clear wall blocked flag when exiting chase state
+        Animator animator = enemy.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("WallBlocked", false);
+        }
     }
 
     private void Chase(EnemyAI enemy)
@@ -27,6 +34,26 @@ public class ChaseState : IEnemyState
         if (playerTransform == null)
         {
             return;
+        }
+
+        // Check if player is still in detection range
+        if (enemy.IsPlayerInDetectionRange())
+        {
+            // Player is in range, reset loss timer
+            timeLostPlayer = 0f;
+        }
+        else
+        {
+            // Player is out of range, increment loss timer
+            timeLostPlayer += Time.deltaTime * 1000f; // Convert to milliseconds
+
+            // Check if timeout exceeded
+            if (timeLostPlayer >= enemy.GetComponent<EnemyAI>().chaseLossTimeout)
+            {
+                // Lost target for too long, return to start position
+                enemy.ChangeState(new ReturnState());
+                return;
+            }
         }
 
         // Calculate dead zone based on enemy's collider width
@@ -55,8 +82,20 @@ public class ChaseState : IEnemyState
             Flip(enemy);
         }
 
-        // Move towards player
-        enemy.Rb.linearVelocity = new Vector2(directionToPlayer * enemy.ChaseSpeed, enemy.Rb.linearVelocity.y);
+        // Check for wall in movement direction
+        if (enemy.IsWallInDirection(directionToPlayer))
+        {
+            // Hit a wall, stop movement but stay in chase state facing the wall
+            enemy.Rb.linearVelocity = new Vector2(0f, enemy.Rb.linearVelocity.y);
+            enemy.GetComponent<Animator>().SetBool("WallBlocked", true);
+        }
+        else
+        {
+            // Clear wall blocked flag if wall is no longer in the way
+            enemy.GetComponent<Animator>().SetBool("WallBlocked", false);
+            // Move towards player
+            enemy.Rb.linearVelocity = new Vector2(directionToPlayer * enemy.ChaseSpeed, enemy.Rb.linearVelocity.y);
+        }
     }
 
     private void Flip(EnemyAI enemy)

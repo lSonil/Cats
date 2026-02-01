@@ -11,9 +11,13 @@ public class EnemyAI : MonoBehaviour
     public float detectionDistance = 3f;
     public float detectionHeight = 2f;
     public float chaseSpeed = 2f;
+    public float chaseLossTimeout = 5000f; // Milliseconds before losing target if out of range
 
     [Header("Return Settings")]
     public float returnSpeed = 1.5f;
+
+    [Header("Wall Detection Settings")]
+    public LayerMask wallLayers;
 
     [Header("ID Settings")]
     public int Dog_Id;
@@ -91,9 +95,8 @@ public class EnemyAI : MonoBehaviour
             currentState.Update(this);
         }
 
-        IsMoving = currentState is ChaseState ||
-                   currentState is ReturnState ||
-                   (currentState is IdleState && patrolOnIdle);
+        // Check if actually moving based on velocity
+        IsMoving = Mathf.Abs(rb.linearVelocity.x) > 0.01f;
         ar.SetBool("Moving", IsMoving);
     }
     public void ChangeState(IEnemyState newState)
@@ -157,6 +160,39 @@ public class EnemyAI : MonoBehaviour
         return !IsPlayerHoldingCorrectItem();
     }
 
+    public bool IsPlayerInDetectionRange()
+    {
+        if (playerTransform == null)
+        {
+            return false;
+        }
+
+        // Get the center of the enemy (accounting for collider bounds)
+        Vector3 detectionCenter = transform.position;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            detectionCenter = col.bounds.center;
+        }
+
+        Vector2 offset = playerTransform.position - detectionCenter;
+
+        // Check vertical cap first
+        if (Mathf.Abs(offset.y) >= detectionHeight)
+        {
+            return false;
+        }
+
+        // Check if within circular detection range
+        float distanceToPlayer = offset.magnitude;
+        if (distanceToPlayer >= detectionDistance)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     private bool IsPlayerHoldingCorrectItem()
     {
         if (playerInventory == null)
@@ -166,6 +202,28 @@ public class EnemyAI : MonoBehaviour
 
         Item heldItem = playerInventory.currentHeldItem;
         return heldItem != null && heldItem.itemId == Dog_Id;
+    }
+
+    public bool IsWallInDirection(float direction)
+    {
+        // Get the collider to determine raycast origin and size
+        Collider2D col = GetComponent<Collider2D>();
+        if (col == null)
+        {
+            return false;
+        }
+
+        // Cast from the center of the collider in the movement direction
+        Vector2 rayOrigin = col.bounds.center;
+        Vector2 rayDirection = direction > 0 ? Vector2.right : Vector2.left;
+
+        // Raycast slightly beyond the collider edge (adaptive based on collider size)
+        float wallDetectionDistance = col.bounds.extents.x * 0.9f; // Use 90% of half-width as detection distance
+        float rayDistance = col.bounds.extents.x + wallDetectionDistance;
+
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, rayDirection, rayDistance, wallLayers);
+
+        return hit.collider != null;
     }
 
     private void OnHeldItemChanged(Item newItem)
