@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public float detectionDistance = 3f;
     public float detectionHeight = 2f;
     public float chaseSpeed = 2f;
+    public float chaseLossTimeout = 5000f; // Milliseconds before losing target if out of range
 
     [Header("Return Settings")]
     public float returnSpeed = 1.5f;
@@ -157,6 +158,39 @@ public class EnemyAI : MonoBehaviour
         }
 
         return !IsPlayerHoldingCorrectItem();
+    }
+
+    public bool IsPlayerInDetectionRange()
+    {
+        if (playerTransform == null)
+        {
+            return false;
+        }
+
+        // Get the center of the enemy (accounting for collider bounds)
+        Vector3 detectionCenter = transform.position;
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            detectionCenter = col.bounds.center;
+        }
+
+        Vector2 offset = playerTransform.position - detectionCenter;
+
+        // Check vertical cap first
+        if (Mathf.Abs(offset.y) >= detectionHeight)
+        {
+            return false;
+        }
+
+        // Check if within circular detection range
+        float distanceToPlayer = offset.magnitude;
+        if (distanceToPlayer >= detectionDistance)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     private bool IsPlayerHoldingCorrectItem()
