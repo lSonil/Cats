@@ -1,29 +1,35 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Lock : MonoBehaviour
 {
-    public GameObject objectToShow;
-    public int ItemID;
+    public int ItemID; // ID-ul necesar
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Item item = collision.GetComponentInParent<PlayerInventory>().currentHeldItem;
-            if (item != null)
+            Debug.Log("Juc?torul a atins u?a!");
+
+            // C?ut?m inventarul pe orice parte a juc?torului
+            PlayerInventory inv = collision.gameObject.GetComponentInChildren<PlayerInventory>();
+            if (inv == null) inv = collision.gameObject.GetComponentInParent<PlayerInventory>();
+
+            if (inv != null && inv.currentHeldItem != null)
             {
-                if (ItemID == item.itemId) { 
-                    if (objectToShow != null)
-                        objectToShow .SetActive(true);
-                    Destroy(this.gameObject);
+                if (inv.currentHeldItem.itemId == ItemID)
+                {
+                    Debug.Log("ID Corect! Declan??m Victory.");
+                    GameManager.Instance.Victory();
+                }
+                else
+                {
+                    Debug.Log("ID Gresit! Ai: " + inv.currentHeldItem.itemId + " dar trebuie: " + ItemID);
                 }
             }
+            else
+            {
+                Debug.Log("Inventar neg?sit sau mâna e goal?!");
+            }
         }
-    }
-
-    private void Start()
-    {
-        if (gameObject != null)
-            gameObject.SetActive(false);
     }
 }
