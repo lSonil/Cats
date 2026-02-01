@@ -169,12 +169,12 @@ TextureImporter:
       name: othersprites_0
       rect:
         serializedVersion: 2
-        x: 296
-        y: 1802
-        width: 109
-        height: 656
+        x: 298
+        y: 1780
+        width: 107
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: othersprites_1
       rect:
         serializedVersion: 2
-        x: 999
-        y: 1803
-        width: 103
-        height: 649
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 993
+        y: 1780
+        width: 125
+        height: 700
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: othersprites_2
       rect:
         serializedVersion: 2
-        x: 1579
-        y: 1803
-        width: 350
-        height: 654
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1583
+        y: 1780
+        width: 348
+        height: 700
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -235,12 +235,12 @@ TextureImporter:
       name: othersprites_3
       rect:
         serializedVersion: 2
-        x: 2210
-        y: 1854
-        width: 481
-        height: 499
+        x: 2100
+        y: 1780
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -257,12 +257,12 @@ TextureImporter:
       name: othersprites_4
       rect:
         serializedVersion: 2
-        x: 2893
-        y: 1861
-        width: 494
-        height: 498
+        x: 2800
+        y: 1780
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,12 +279,12 @@ TextureImporter:
       name: othersprites_5
       rect:
         serializedVersion: 2
-        x: 1053
-        y: 1536
-        width: 303
-        height: 211
+        x: 0
+        y: 1080
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -301,12 +301,12 @@ TextureImporter:
       name: othersprites_6
       rect:
         serializedVersion: 2
-        x: 1057
-        y: 1655
-        width: 9
-        height: 19
+        x: 700
+        y: 1080
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -323,12 +323,12 @@ TextureImporter:
       name: othersprites_7
       rect:
         serializedVersion: 2
-        x: 2181
-        y: 1161
-        width: 539
-        height: 538
+        x: 1400
+        y: 1080
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -345,12 +345,12 @@ TextureImporter:
       name: othersprites_8
       rect:
         serializedVersion: 2
-        x: 186
-        y: 1364
-        width: 373
-        height: 278
+        x: 2100
+        y: 1080
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,12 +367,12 @@ TextureImporter:
       name: othersprites_9
       rect:
         serializedVersion: 2
-        x: 1346
-        y: 1611
-        width: 10
-        height: 19
+        x: 2800
+        y: 1080
+        width: 700
+        height: 700
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -385,297 +385,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: othersprites_10
-      rect:
-        serializedVersion: 2
-        x: 1056
-        y: 1553
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fd3cffaea84a59a80800000000000000
-      internalID: -8460675408390536225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_11
-      rect:
-        serializedVersion: 2
-        x: 1058
-        y: 1525
-        width: 40
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ad23771afd6bb30e0800000000000000
-      internalID: -2289034913984859430
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_12
-      rect:
-        serializedVersion: 2
-        x: 1096
-        y: 1532
-        width: 6
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 211ed7554c56083d0800000000000000
-      internalID: -3206451040765484782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_13
-      rect:
-        serializedVersion: 2
-        x: 1135
-        y: 1536
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 76ebc6f64805d1460800000000000000
-      internalID: 7214010707852705383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_14
-      rect:
-        serializedVersion: 2
-        x: 1587
-        y: 1256
-        width: 387
-        height: 289
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c33f1f3a2de8daa0800000000000000
-      internalID: -6135893726588881978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_15
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 1521
-        width: 14
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 077811842819e19d0800000000000000
-      internalID: -2801641929436985488
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_16
-      rect:
-        serializedVersion: 2
-        x: 1038
-        y: 1473
-        width: 34
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6e42db456c7dfa10800000000000000
-      internalID: 1944847388599537261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_17
-      rect:
-        serializedVersion: 2
-        x: 1053
-        y: 1504
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3f40852b6174a1b0800000000000000
-      internalID: -5646263327811154115
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_18
-      rect:
-        serializedVersion: 2
-        x: 1037
-        y: 1497
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2c84ceca56ed14f0800000000000000
-      internalID: -856275076440093654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_19
-      rect:
-        serializedVersion: 2
-        x: 94
-        y: 1225
-        width: 506
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 407657f252afb3d80800000000000000
-      internalID: -8269741253118826748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_20
-      rect:
-        serializedVersion: 2
-        x: 745
-        y: 1079
-        width: 529
-        height: 364
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f2e7569c8c3cfcc0800000000000000
-      internalID: -3675996621325737223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_21
-      rect:
-        serializedVersion: 2
-        x: 2829
-        y: 1378
-        width: 620
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd01f405489fde610800000000000000
-      internalID: 1652250984993198301
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: othersprites_22
-      rect:
-        serializedVersion: 2
-        x: 1492
-        y: 1113
-        width: 524
-        height: 187
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2cbf2308a97662e50800000000000000
-      internalID: 6784223801953680322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dde22d4e6f9120f4181bf5814815150c
     internalID: 0
     vertices: []
     indices: 
@@ -683,24 +397,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":700.0,"y":700.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       othersprites_0: -6309181296092756119
       othersprites_1: 84450716075643114
       othersprites_10: -8460675408390536225
-      othersprites_11: -2289034913984859430
-      othersprites_12: -3206451040765484782
-      othersprites_13: 7214010707852705383
-      othersprites_14: -6135893726588881978
-      othersprites_15: -2801641929436985488
-      othersprites_16: 1944847388599537261
-      othersprites_17: -5646263327811154115
-      othersprites_18: -856275076440093654
-      othersprites_19: -8269741253118826748
       othersprites_2: 4376240165367636096
-      othersprites_20: -3675996621325737223
-      othersprites_21: 1652250984993198301
-      othersprites_22: 6784223801953680322
       othersprites_3: 7277766432012687464
       othersprites_4: -7719832435575801867
       othersprites_5: 8655575752520110653
