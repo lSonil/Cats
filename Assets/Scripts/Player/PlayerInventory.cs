@@ -142,7 +142,7 @@ public class PlayerInventory : MonoBehaviour
         currentHeldItem = newItem;
         HeldItemChanged?.Invoke(currentHeldItem);
     }
-    float maxJump;
+    public float maxJump=10;
 
     void PickUpClosest()
     {
@@ -159,13 +159,9 @@ public class PlayerInventory : MonoBehaviour
 
         if(currentHeldItem.itemId== dogMaskId)
         {
-            maxJump = GetComponent<PlayerMovement>().maxJump;
             GetComponent<PlayerMovement>().maxJump= GetComponent<PlayerMovement>().minJump;
         }
-        else
-        {
-            GetComponent<PlayerMovement>().maxJump = maxJump;
-        }
+
             closest = null;
     }
 
@@ -184,6 +180,7 @@ public class PlayerInventory : MonoBehaviour
 
     void DropItem()
     {
+            GetComponent<PlayerMovement>().maxJump = maxJump;
         if (currentHeldItem == null)
         {
             return;
@@ -207,6 +204,8 @@ public class PlayerInventory : MonoBehaviour
 
     void ThrowItem()
     {
+        GetComponent<PlayerMovement>().maxJump = maxJump;
+
         if (currentHeldItem == null)
         {
             return;

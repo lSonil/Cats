@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 8d34de1947d533e4796f9b9b5c9cdd03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9123640855462972241
+    second: catrestart_0
+  - first:
+      213: -7499253563692979896
+    second: catrestart_1
+  - first:
+      213: 6795757066162375612
+    second: catrestart_2
+  - first:
+      213: -2127409074274452843
+    second: catrestart_3
+  - first:
+      213: 41562284620371231
+    second: catrestart_4
+  - first:
+      213: 6392338103279248409
+    second: catrestart_5
+  - first:
+      213: 3144793953443955592
+    second: catrestart_6
+  - first:
+      213: -3538665696702994634
+    second: catrestart_7
+  - first:
+      213: 3072152643124705889
+    second: catrestart_8
+  - first:
+      213: -2074124741593708421
+    second: catrestart_9
+  - first:
+      213: 894566625530309101
+    second: catrestart_10
+  - first:
+      213: -6437602338073689959
+    second: catrestart_11
+  - first:
+      213: 373387744584954360
+    second: catrestart_12
+  - first:
+      213: -9044949962832934171
+    second: catrestart_13
+  - first:
+      213: 7816230532112509255
+    second: catrestart_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: catrestart_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 1639
+        width: 206
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa473e72bf0526180800000000000000
+      internalID: -9123640855462972241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_1
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 1635
+        width: 206
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8496f77dd9c4de790800000000000000
+      internalID: -7499253563692979896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_2
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 1640
+        width: 178
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb8574db016f4e50800000000000000
+      internalID: 6795757066162375612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_3
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 1643
+        width: 203
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59abdebe7bce972e0800000000000000
+      internalID: -2127409074274452843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_4
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1643
+        width: 203
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15d9da7da8a39000800000000000000
+      internalID: 41562284620371231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_5
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 1625
+        width: 315
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 914672a03a526b850800000000000000
+      internalID: 6392338103279248409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_6
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 1642
+        width: 188
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 883c2d6507d84ab20800000000000000
+      internalID: 3144793953443955592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_7
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 1651
+        width: 215
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63768292c4224eec0800000000000000
+      internalID: -3538665696702994634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_8
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 1635
+        width: 206
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16ab93d4d8a72aa20800000000000000
+      internalID: 3072152643124705889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_9
+      rect:
+        serializedVersion: 2
+        x: 2252
+        y: 1640
+        width: 178
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b784575698a3733e0800000000000000
+      internalID: -2074124741593708421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_10
+      rect:
+        serializedVersion: 2
+        x: 2431
+        y: 1643
+        width: 203
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de967a63b932a6c00800000000000000
+      internalID: 894566625530309101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_11
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 1642
+        width: 188
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 990c4e908ca09a6a0800000000000000
+      internalID: -6437602338073689959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_12
+      rect:
+        serializedVersion: 2
+        x: 2811
+        y: 1642
+        width: 268
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f17877ec2a8e2500800000000000000
+      internalID: 373387744584954360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_13
+      rect:
+        serializedVersion: 2
+        x: 3076
+        y: 1635
+        width: 206
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea09265ee1e97280800000000000000
+      internalID: -9044949962832934171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: catrestart_14
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 1642
+        width: 188
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749e02db144d87c60800000000000000
+      internalID: 7816230532112509255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      catrestart_0: -9123640855462972241
+      catrestart_1: -7499253563692979896
+      catrestart_10: 894566625530309101
+      catrestart_11: -6437602338073689959
+      catrestart_12: 373387744584954360
+      catrestart_13: -9044949962832934171
+      catrestart_14: 7816230532112509255
+      catrestart_2: 6795757066162375612
+      catrestart_3: -2127409074274452843
+      catrestart_4: 41562284620371231
+      catrestart_5: 6392338103279248409
+      catrestart_6: 3144793953443955592
+      catrestart_7: -3538665696702994634
+      catrestart_8: 3072152643124705889
+      catrestart_9: -2074124741593708421
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
