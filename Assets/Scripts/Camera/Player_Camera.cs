@@ -9,6 +9,16 @@ public class Player_Camera : MonoBehaviour
     public float smooth_time = 0.25f;
     public Vector2 Camera_Velocity = new Vector2(1, 1);
 
+    public float Cam_Right_Limiter;
+    public float Cam_Left_Limiter;
+    public float Cam_Top_Limiter;
+    public float Cam_Bottom_Limiter;
+
+    [SerializeField] Vector3 target_position;
+    [SerializeField] Vector3 target_position_Original;
+    public Vector3 true_position;
+
+
     void Start()
     {
         //     Smoothing_Input_UI = GameObject.FindGameObjectWithTag("UI_Cam_Smooth");
@@ -57,8 +67,21 @@ public class Player_Camera : MonoBehaviour
             }
 
             //  smooth_time = float.Parse(Smoothing_Input_Field.text);
+            target_position_Original = Camera_Target.transform.position;
+            target_position = Camera_Target.transform.position;
 
-            transform.position = Vector2.SmoothDamp(transform.position, Camera_Target.transform.position, ref Camera_Velocity, smooth_time);
+            transform.position = Vector2.SmoothDamp(transform.position, target_position, ref Camera_Velocity, smooth_time);
+
+            true_position = this.transform.position;
+
+     
+
+
+
+
         }
+
+       
     }
+
 }
