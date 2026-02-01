@@ -3,14 +3,16 @@ using UnityEngine;
 public class Lock : MonoBehaviour
 {
     public int ItemID; // ID-ul necesar
+    public GameObject objToAppear; // ID-ul necesar
 
+    private void Start()
+    {
+        objToAppear.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("Juc?torul a atins u?a!");
-
-            // C?ut?m inventarul pe orice parte a juc?torului
             PlayerInventory inv = collision.gameObject.GetComponentInChildren<PlayerInventory>();
             if (inv == null) inv = collision.gameObject.GetComponentInParent<PlayerInventory>();
 
@@ -18,17 +20,10 @@ public class Lock : MonoBehaviour
             {
                 if (inv.currentHeldItem.itemId == ItemID)
                 {
-                    Debug.Log("ID Corect! Declan??m Victory.");
-                    GameManager.Instance.Victory();
+                    if(objToAppear!=null)
+                        objToAppear.SetActive(false);
+                    Destroy(gameObject);
                 }
-                else
-                {
-                    Debug.Log("ID Gresit! Ai: " + inv.currentHeldItem.itemId + " dar trebuie: " + ItemID);
-                }
-            }
-            else
-            {
-                Debug.Log("Inventar neg?sit sau mâna e goal?!");
             }
         }
     }
