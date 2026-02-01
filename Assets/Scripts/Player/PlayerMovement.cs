@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Jump Charge Settings")]
     public float minJump = 10f; // Set higher so tap jump feels real
     public float maxJump = 25f;
+    public float chargeStartThreshold = 0.15f; // Time before jump charging begins
+    public float maxChargeTime = 1.0f; // Time to reach full charge (can be modified by masks)
 
     [Header("Detection Settings")]
     public Transform groundCheck;
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private float jumpChargeTimer;
     private bool isCharging;
+    private bool isHoldingJump;
+    private float jumpHoldTimer;
 
     [Header("Idler animation")]
     public float idleThreshold = 5.0f; // Time in seconds before becoming "bored"
@@ -29,13 +33,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Start() => rb = GetComponent<Rigidbody2D>();
     public bool Grounded() => isGrounded;
-    public bool Gharging() => isCharging;
+    public bool Charging() => isCharging;
+    public bool HoldingJump() => isHoldingJump;
+    public bool ShouldShowInAir() => !isGrounded && !isHoldingJump; // Only show InAir when actually airborne and not charging
     public bool Idle() => isIdleLongTime;
-    public bool Falling() => rb.linearVelocity.y<0;
-    public bool Moving() => rb.linearVelocity.x!=0;
+    public bool Falling() => rb.linearVelocity.y < 0;
+    public bool Moving() => rb.linearVelocity.x != 0;
+    public float GetJumpChargeProgress() => isHoldingJump ? Mathf.Clamp01(jumpHoldTimer / maxChargeTime) : 0f;
     public void OnMove(InputValue value) => moveInput = value.Get<Vector2>();
 
-        
+
 
     // This function runs on BOTH press and release if Action Type is "Pass Through"
     public void OnJump(InputValue value)
@@ -44,22 +51,26 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                isCharging = true;
-                jumpChargeTimer = 0f;
+                isHoldingJump = true;
+                jumpHoldTimer = 0f;
             }
         }
         else // This is the "Key Unpress"
         {
-            if (isCharging)
+            if (isHoldingJump)
             {
                 PerformJump();
+                isHoldingJump = false;
+                isCharging = false;
+                jumpHoldTimer = 0f;
             }
         }
     }
 
     private void PerformJump()
     {
-        float chargePercent = Mathf.Clamp01(jumpChargeTimer);
+        // Calculate charge percentage based on maxChargeTime
+        float chargePercent = isCharging ? Mathf.Clamp01(jumpChargeTimer / maxChargeTime) : 0f;
         float finalJumpForce = Mathf.Lerp(minJump, maxJump, chargePercent);
 
         // 1. Determine direction based on where the sprite is looking
@@ -71,6 +82,13 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
         isCharging = false;
         jumpChargeTimer = 0f;
+
+        // Force animator to InAir state
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play("InAir", 0, 0f);
+        }
     }
 
     void Update()
@@ -78,9 +96,23 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer) ||
                      Physics2D.OverlapCircle(groundCheck.position, checkRadius, itemFilterLayer);
 
-        if (isCharging)
+        // Handle jump hold timing and charging
+        if (isHoldingJump)
         {
-            jumpChargeTimer += Time.deltaTime;
+            jumpHoldTimer += Time.deltaTime;
+
+            // Start charging only after threshold is exceeded
+            if (!isCharging && jumpHoldTimer >= chargeStartThreshold)
+            {
+                isCharging = true;
+                jumpChargeTimer = jumpHoldTimer; // Carry over the elapsed time
+            }
+
+            // Continue charging if already started
+            if (isCharging)
+            {
+                jumpChargeTimer += Time.deltaTime;
+            }
         }
     }
 
